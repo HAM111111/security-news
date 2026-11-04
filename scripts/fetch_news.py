@@ -14,7 +14,7 @@ FEEDS = [
 
 OUTPUT = Path("news.json")
 MAX_ITEMS_PER_FEED = 20
-MODEL = "llama-3.3-70b-versatile"
+MODEL = "openai/gpt-oss-120b"
 
 PROMPT = """You are a cybersecurity analyst. Below are news articles, each with an index number.
 
