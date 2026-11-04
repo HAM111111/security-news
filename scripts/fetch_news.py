@@ -1,17 +1,20 @@
 import json
+import os
 import re
-import feedparser
-import anthropic
 from datetime import datetime, timezone
 from pathlib import Path
 
+import feedparser
+from openai import OpenAI
+
+# مصادر RSS (يمكن تعديلها أو إضافة مصادر أخرى لاحقاً)
 FEEDS = [
     "https://feeds.feedburner.com/TheHackersNews",
 ]
 
 OUTPUT = Path("news.json")
 MAX_ITEMS_PER_FEED = 20
-MODEL = "claude-haiku-5-5"
+MODEL = "llama-3.3-70b-versatile"
 
 PROMPT = """You are a cybersecurity analyst. Below are news articles, each with an index number.
 
@@ -57,28 +60,45 @@ def fetch_all():
     return items
 
 
+def extract_json(text):
+    # يستخرج الجزء الذي يبدأ بـ { وينتهي بـ } حتى لو أضاف النموذج كلاماً إضافياً
+    start = text.find("{")
+    end = text.rfind("}")
+    if start == -1 or end == -1:
+        raise ValueError("No JSON found in model response")
+    return json.loads(text[start:end + 1])
+
+
 def analyze(items):
-    client = anthropic.Anthropic()  # يقرأ ANTHROPIC_API_KEY من البيئة
+    client = OpenAI(
+        base_url="https://api.groq.com/openai/v1",
+        api_key=os.environ["GROQ_API_KEY"],
+    )
     articles = "\n\n".join(
         f"[{i}] {it['title']}\n{it['summary']}" for i, it in enumerate(items)
     )
-    msg = client.messages.create(
+    resp = client.chat.completions.create(
         model=MODEL,
         max_tokens=3000,
         messages=[{"role": "user", "content": PROMPT + articles}],
     )
-    text = msg.content[0].text.strip()
-    text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text)
-    return json.loads(text)
+    text = resp.choices[0].message.content.strip()
+    return extract_json(text)
 
 
 def main():
     items = fetch_all()
+    if not items:
+        raise SystemExit("No items fetched from RSS feeds")
+
     result = analyze(items)
 
     breaches = []
     for b in result.get("breaches", []):
-        src = items[b["index"]]
+        idx = b.get("index")
+        if not isinstance(idx, int) or idx < 0 or idx >= len(items):
+            continue  # تجاهل أي فهرس غير صالح يرجعه النموذج
+        src = items[idx]
         breaches.append({
             "title": src["title"],
             "link": src["link"],
