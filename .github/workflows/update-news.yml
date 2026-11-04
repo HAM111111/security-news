@@ -2,8 +2,8 @@ name: Update security news
 
 on:
   schedule:
-    - cron: "0 * * * *"   # كل ساعة
-  workflow_dispatch:       # يسمح بالتشغيل اليدوي للتجربة
+    - cron: "0 23 * * *"   # كل يوم 23:00 بتوقيت UTC
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -19,9 +19,11 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install feedparser
+        run: pip install feedparser openai
 
-      - name: Fetch news
+      - name: Fetch and analyze news
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: python scripts/fetch_news.py
 
       - name: Commit results
