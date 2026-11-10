@@ -1,146 +1,126 @@
 {
-  "updated_at": "2026-11-09T23:28:12.758675+00:00",
+  "updated_at": "2026-11-10T23:24:19.419327+00:00",
   "stories": [
     {
-      "headline": "استغلال ثغرة SSHole في OpenSSH لاختراق أنظمة لينكس",
+      "headline": "ثغرة تجاوز المصادقة في Xen Orchestra تُستغل للحصول على صلاحيات إدارية",
       "sources": [
         {
           "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html"
+          "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html"
         },
         {
           "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-sshole-openssh-flaw-to-breach-linux-systems/"
-        },
-        {
-          "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/hackers-exploiting-sshole-authentication-bypass-in-openssh/"
+          "link": "https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/"
         }
       ],
-      "agreement": "جميع المصادر أكّدوا أن الثغرة CVE-2026-123158 (المعروفة باسم SSHole) تسمح بتجاوز المصادقة عندما يكون PAM معطلاً في إصدارات OpenSSH المبنية على musl، وتم استغلالها في الهجمات الفعلية للحصول على صلاحيات الجذر وتنفيذ أوامر خبيثة.",
-      "differences": "THN ذكر تصنيف CVSS 8.1 وتفاصيل التقنية، بينما BleepingComputer ركّز على تنفيذ الأوامر وإبقاء الوصول المستمر، وSecurityWeek أشار إلى أن بوتنتات التعدين والعملات المشفرة هي الفاعلين الأوليين.",
+      "agreement": "كلا المصدرين يؤكدان وجود ثغرة حرجة في Xen Orchestra تسمح بتجاوز المصادقة عبر معالجة غير صحيحة لملفات تعريف الارتباط (cookies) في واجهة REST، وأن المهاجمين يستغلونها بنشاط للحصول على صلاحيات إدارية على خوادم XCP‑ng الافتراضية.",
+      "differences": "موقع The Hacker News يذكر أن الثغرة مسجلة تحت VSA‑2026‑062 وتوضح تفاصيل تحليل ملف تعريف الارتباط، بينما BleepingComputer يركز على نتيجة الاستغلال وهي اختطاف خوادم الأجهزة الافتراضية.",
       "severity": "عالية",
-      "what_happened": "استغل المهاجمون الثغرة لتسجيل الدخول إلى خوادم لينكس دون كلمة مرور، وحصلوا على صلاحية الجذر، ثم نفّذوا أوامر خبيثة وسرقوا بيانات الاعتماد.",
-      "how_it_happened": "الثغرة تكمن في عملية التحقق من المصادقة داخل OpenSSH عندما لا يكون PAM مفعلاً؛ يستطيع المهاجم إرسال طلب SSH يُعطيه الدخول مباشرةً. استغل القراصنة مسح الشبكة للعثور على خوادم معرضة، ثم استخدموا هذه الثغرة لتسجيل الدخول كجذر.",
-      "how_handled": "أصدرت مشاريع OpenSSH تحديثات لسد الثغرة، ونُصح المسؤولون بتحديث الإصدارات، وتفعيل PAM أو الانتقال إلى بنى لا تستخدم musl، بالإضافة إلى تدوير كلمات المرور ومراجعة سجلات الدخول."
+      "what_happened": "تمكن المهاجمون من استغلال ثغرة في معالجة ملفات تعريف الارتباط لواجهة REST في Xen Orchestra، ما أتاح لهم تخطي عملية المصادقة والحصول على صلاحيات إدارية على خوادم الافتراضية.",
+      "how_it_happened": "الضعف يكمن في عدم التحقق الصحيح من قيمة authenticationToken المرسلة عبر طلبات REST؛ يمكن للمهاجم إرسال قيمة معدلة تؤدي إلى تحويل الكائن إلى فارغ ({}) وبالتالي تجاوز المصادقة. التقنية المستخدمة هي تجاوز المصادقة (authentication bypass) عبر إدخال غير متوقع في API.",
+      "how_handled": "أصدرت شركة Vates VMS تحديثات تصحيحية لثغرة Xen Orchestra، وأوصت جميع العملاء بترقية الأنظمة فورًا وتغيير بيانات الاعتماد الإدارية ومراجعة سجلات الوصول."
     },
     {
-      "headline": "ثغرة تجاوز MFA في جدران SonicWall SonicOS (CVE‑2026‑19868)",
+      "headline": "مجموعة Turla تستخدم برنامج Cereal لاختراق خوادم Microsoft Exchange وسرقة رسائل البريد الإلكتروني الحكومية",
       "sources": [
         {
           "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/cisa-flags-sonicwall-sonicos-mfa-bypass.html"
+          "link": "https://thehackernews.com/2026/11/russian-turla-hackers-use-new-cereal.html"
         },
         {
           "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks/"
-        },
-        {
-          "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/sonicwall-patches-exploited-sonicos-bug-that-weakens-vpn-logins/"
+          "link": "https://www.bleepingcomputer.com/news/security/turla-hackers-use-new-ceral-malware-to-spy-on-govt-exchange-servers/"
         }
       ],
-      "agreement": "جميع المصادر صرحوا أن CVE‑2026‑19868 تسمح بتجاوز التحقق متعدد العوامل في نظام SonicOS عبر استغلال ضعف في معالجة SAML، مما يمكن المهاجمين من الدخول إلى الشبكات الداخلية باستخدام بيانات اعتماد بديلة.",
-      "differences": "THN أضاف أن الثغرة أُدرجت في كتالوج KEV الخاص بـ CISA مع درجتي CVSS 7.1/7.5، بينما SecurityWeek ركّز على تفاصيل استغلال SSL‑VPN وطرح تصحيحات البرنامج، ومقال 49 عرّف التقنية التفصيلية لتزييف توكين SAML.",
+      "agreement": "كلا المصدرين يوضحان أن مجموعة Turla (المعروفة بـ Snake) استُخدمت أداة Cereal الجديدة لاختراق خوادم Exchange في مؤسسات حكومية وجمع رسائل البريد الإلكتروني بسرية.",
+      "differences": "The Hacker News يضيف أن Cereal أداة تجسسية غير موثقة ومُصممة بشكل معياري، بينما BleepingComputer يركز على هدف التجسس على الخوادم الحكومية فقط دون ذكر تفاصيل الهندسة المعمارية للأداة.",
       "severity": "عالية",
-      "what_happened": "استغل القراصنة الثغرة لتجاوز طبقة المصادقة المتعددة العوامل في منتجات VPN الخاصة بـ SonicWall، ما مكنهم من الوصول إلى الشبكات الداخلية وسرقة بيانات حساسة.",
-      "how_it_happened": "تسمح الثغرة للمتسلل بإنشاء توكن SAML مزور يُقَبَلُ في عملية المصادقة دون إكمال خطوة MFA، وذلك بسبب خلل في طريقة فحص الـ SAML داخل SonicOS. بعد الحصول على توكن صالح، يُمكنه الدخول إلى VPN باستخدام بيانات اعتماد مختلفة.",
-      "how_handled": "أصدرت SonicWall تحديثات للبرنامج تصحّح مسار المصادقة، ودعت CISA المنظمات إلى تطبيق التصحيحات فوراً، وإعادة تعيين بيانات الاعتماد، وتفعيل ضوابط أمان إضافية مثل قوائم التحكم في الوصول."
+      "what_happened": "تم اختراق خوادم Microsoft Exchange باستخدام مجموعة أدوات Cereal، مما مكن القراصنة من استخراج محتويات البريد الإلكتروني للجهات الحكومية المستهدفة.",
+      "how_it_happened": "اعتمدت الهجمة على استغلال ثغرات (معروفة أو صفرية) في خوادم Exchange، تلاها نشر برمجية Cereal التي تضمن مكوّنات للتمكن من الحصول على صلاحيات النظام وجمع البريد الإلكتروني. التقنية هي استغلال ثغرات خادم البريد مع تنفيذ شيفرة خبيثة (remote code execution).",
+      "how_handled": "قامت مايكروسوفت بإصدار تحديثات أمان عاجلة لخوادم Exchange، ونصحت المؤسسات بتطبيق التصحيحات فورًا، وفحص السجلات للبحث عن أي نشاط غير معتاد، وتحديث بيانات الاعتماد."
     },
     {
-      "headline": "هجمات على أنظمة التحكم في التبريد الصناعي تتسبب في حرائق وخسائر مخزون",
+      "headline": "SAP تصدر تصحيحات لعدد أربع ثغرات حرجة بدرجة CVSS 10.0 تسمح بتنفيذ شيفرة عن بُعد دون مصادقة",
       "sources": [
         {
           "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/us-agencies-warn-refrigeration.html"
+          "link": "https://thehackernews.com/2026/11/sap-patches-four-cvss-100-flaws.html"
         },
         {
           "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/france-blames-iranian-hackers-for-supermarket-attacks-that-sparked-fires/"
-        }
-      ],
-      "agreement": "كلا المصدرين ذكروا أن جهات تهديد تستهدف وحدات التبريد والأنظمة المرتبطة بسلسلة البرد في المتاجر والسوبرماركت، مع هدف زيادة درجة الحرارة لتسبب حريقاً وفقداناً للمنتجات.",
-      "differences": "THN ركّز على تحذير الوكالات الأمريكية وإمكانية حدوث حرائق، بينما BleepingComputer أشار إلى أن فرنسا نسبتها إلى مخترقين إيرانيين ودون أن عدد المتاجر المتضررة (أكثر من 700).",
-      "severity": "عالية",
-      "what_happened": "تم اختراق وحدات التحكم في أنظمة التبريد عبر الإنترنت، وتعديل إعدادات الحرارة لتعمل على تسخين مستمر، ما أدى إلى حريق في بعض المواقع وتلف المخزون الغذائي.",
-      "how_it_happened": "استغل المهاجمون ثغرات في برمجيات PLC/SCADA أو إعدادات وصول ضعيفة (كلمات مرور افتراضية أو عدم وجود جدار حماية) لتوصيل أوامر تعديل درجة الحرارة. بعض الوحدات كانت متصلة بالإنترنت بدون تشفير أو تحديثات أمان.",
-      "how_handled": "أصدرت الوكالات تحذيرات للمنشآت الصناعية، وطالبت بتطبيق تصحيحات الفirmware، وعزل الشبكات، وتفعيل قوائم التحكم في الوصول، بالإضافة إلى إغلاق الأنظمة المتصلة بالإنترنت حتى يتم تأمينها."
-    },
-    {
-      "headline": "حملة ShinyHunters: سرقة بيانات حساسة وابتزاز عالمي",
-      "sources": [
-        {
-          "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/binance-denies-data-breach-after-alleged-shinyhunters-claims/"
-        },
-        {
-          "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/fbi-agent-stole-25-million-in-crypto-from-hackers-fraud-victims/"
-        },
-        {
-          "name": "Krebs on Security",
-          "link": "https://krebsonsecurity.com/2026/10/feds-suspect-ransom-negotiator-ran-shinyhunters-extortion-site/"
-        },
-        {
-          "name": "Krebs on Security",
-          "link": "https://krebsonsecurity.com/2026/10/fbi-arrests-founder-of-ransomware-negotiation-firm/"
-        },
-        {
-          "name": "Krebs on Security",
-          "link": "https://krebsonsecurity.com/2026/10/shinyhunters-extorted-boeing-spin-off-prior-to-arrests/"
-        },
-        {
-          "name": "Krebs on Security",
-          "link": "https://krebsonsecurity.com/2026/09/dutch-police-arrest-reformed-hacker-in-shiny-hunters-investigation/"
-        }
-      ],
-      "agreement": "جميع المصادر يربطون مجموعة ShinyHunters بسرقة كميات كبيرة من البيانات، نشرها على منتديات الجريمة الإلكترونية، وابتزاز شركات كبرى، مع تدخل الوكالات الأمنية التي أوقفت بعض أعضائها.",
-      "differences": "المقال 20 يذكر إن Binance نفت حدوث اختراق، 23 يسلط الضوء على موظف في FBI سرق 2.5 مليون دولار من الضحايا، 33 و36 يقدمان تفاصيل عن علاقات الجماعة مع شركات التفاوض على الفدية واعتقالات FBI، 37 يوضح الابتزاز الموجه إلى وحدة تابعة لبوينغ، و38 يصف اعتقال هولندي ساعد في عمليات ShinyHunters.",
-      "severity": "عالية",
-      "what_happened": "قامت مجموعة ShinyHunters بسرقة بيانات حساسة من عدة جهات، بما فيها مكتب التحقيقات الفدرالي، ونشرتها لابتزاز الضحايا، وتعاونت مع جماعات فدية أخرى، ما أدى إلى اعتقال عدة أفراد ومتابعات قانونية.",
-      "how_it_happened": "استخدمت الجماعة تقنيات صيد احتيالي، اختراق تطبيقات ويب، وسرقة بيانات الاعتماد لتسريب قواعد بيانات. بعد جمع المعلومات، عرضت الفدية على الضحايا عبر منتديات مظلمة، واستعانت بوسطاء تفاوض لتسريع الدفع.",
-      "how_handled": "قامت السلطات الفيدرالية الأمريكية (FBI) والشرطة الهولندية بالقبض على عدد من الأعضاء والوسطاء، وتم إبلاغ الضحايا، وشركات متضررة أصدرت إعلانات عن الحادث واتخذت إجراءات تعزيز الأمن الداخلي."
-    },
-    {
-      "headline": "اختراق سحابة Iris Plaza (Iris Ohyama) يُفضي إلى تسريب بيانات 7.7 مليون عميل",
-      "sources": [
-        {
-          "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/"
+          "link": "https://www.bleepingcomputer.com/news/security/sap-patches-four-maximum-severity-security-vulnerabilities/"
         },
         {
           "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/iris-plaza-breach-may-have-exposed-data-of-7-7-million-customers/"
+          "link": "https://www.securityweek.com/sap-patches-critical-icm2shell-proxygate-vulnerabilities/"
         }
       ],
-      "agreement": "المصدران يؤكدان أن مهاجمين وصلوا إلى خدمة سحابية خارجية تُدير بيانات منصة التسوق Iris Plaza، وسرّقوا معلومات شخصية لعدد كبير من العملاء (حوالي 7.7 مليون).",
-      "differences": "BleepingComputer قدم تفاصيل عن وصول غير مصرح به إلى الخدمة السحابية الثالثة، بينما SecurityWeek أبرز حجم البيانات المتأثرة وربما طبيعة المعلومات المسربة.",
-      "severity": "متوسطة",
-      "what_happened": "تم اختراق التخزين السحابي غير المؤمّن الذي يحتوي على بيانات العملاء، ما أدى إلى تسريب معلومات شخصية مثل الاسم، البريد الإلكتروني، وربما تفاصيل الاتصال.",
-      "how_it_happened": "من المحتمل أن يكون السبب تكوين سحابي غير صحيح (مثل إعدادات bucket عامة أو سياسات وصول ضعيفة) سمحت للمهاجمين بتنزيل البيانات دون الحاجة إلى مصادقة.",
-      "how_handled": "أعلنت الشركة عن الحادث، وأغلقت الثغرة عبر تعديل إعدادات السحابة، وأبلغت العملاء المتضررين، وربما وفرت خدمات مراقبة الهوية لمنع سوء الاستخدام."
+      "agreement": "المصادر الثلاثة تؤكد أن SAP أصدرت تصحيحات لعدد أربع عيوب حرجة (ثلاثة في خادم NetWeaver وواحدة في Web Dispatcher) تُصنَّف كـ CVSS 10.0 وتمكن المهاجمين من تنفيذ شيفرة عن بُعد بدون أي مصادقة.",
+      "differences": "The Hacker News يذكر تفاصيل كل ثغرة على حدة، BleepingComputer يضيف أن هناك 35 ثغرة إجمالاً في التحديث مع التركيز على الأربعة ذات الخطورة القصوى، وSecurityWeek يذكر أسماء الثغرات (ICM2SHELL وProxyGate) وتوضيح أن بعضها يؤثر على البوابة (Gateway).",
+      "severity": "عالية",
+      "what_happened": "ثغرات في مكوّنات NetWeaver وWeb Dispatcher في أنظمة SAP تسمح للمتسللين بالوصول غير المصرح به وتنفيذ شيفرة خبيثة على الخوادم المستهدفة.",
+      "how_it_happened": "تتضمن العيوب أخطاء في معالجة الإدخالات (مثل عدم التحقق من صحة البيانات أو تسلسل غير آمن) تؤدي إلى تنفيذ شيفرة عن بُعد دون الحاجة لتسجيل الدخول. التقنية هي تنفيذ شيفرة عن بُعد (RCE) عبر استغلال ثغرات في طبقة التطبيق والبروكسي.",
+      "how_handled": "نشرت SAP تحديثات تصحيحية لجميع الإصدارات المتأثرة، وطالبت العملاء بتطبيقها فورًا، بالإضافة إلى توصية بإعادة تشغيل الخدمات ومراجعة سجلات الأمان."
+    },
+    {
+      "headline": "جوجل تصدر تحديثًا طارئًا لسد الثغرة السابعة من نوع use‑after‑free في Chrome التي تُستغل بنشاط",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/google-issues-chrome-security-update.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "link": "https://www.bleepingcomputer.com/news/security/google-patches-eighth-chrome-zero-day-exploited-in-attacks-this-year/"
+        }
+      ],
+      "agreement": "المصدران يعلنان عن إصدار جوجل لتحديث طارئ لسد ثغرة use‑after‑free في مكوّن XML بالمتصفح Chrome، وهي الثغرة السابعة من نوع zero‑day التي تُستغل حاليًا في هجمات.",
+      "differences": "The Hacker News يحدد معرف الثغرة CVE‑2026‑125350 ويصفها بأنها نقص في الذاكرة من نوع use‑after‑free، بينما BleepingComputer يركز على كونها الثغرة الثامنة التي تم استغلالها خلال العام دون ذكر معرف CVE.",
+      "severity": "عالية",
+      "what_happened": "استغل المهاجمون ثغرة في معالجة XML داخل Chrome تسمح لهم بالوصول إلى ذاكرة محررة مسبقًا (use‑after‑free) لتنفيذ شيفرة عشوائية على الجهاز المستهدف.",
+      "how_it_happened": "الضعف يحدث عندما يحاول المتصفح الوصول إلى كائن تم تحريره في الذاكرة بسبب معالجة XML غير آمنة. التقنية المستخدمة هي استغلال خلل في إدارة الذاكرة (memory corruption) يؤدي إلى تنفيذ شيفرة عن بُعد.",
+      "how_handled": "قامت جوجل بإصدار تحديث أمان فوري لجميع إصدارات Chrome، ودعت المستخدمين إلى تحديث المتصفح فورًا وتفعيل التحديثات التلقائية."
+    },
+    {
+      "headline": "بينانس تحذر من ثغرة هروب من رملية iOS تسمح بقراءة ملفات التطبيقات الأخرى وكشف مفاتيح المحافظ المشفرة",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/binance-warns-of-ios-sandbox-escape.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "link": "https://www.bleepingcomputer.com/news/security/binance-warns-of-ios-flaw-that-could-leak-crypto-wallet-secrets/"
+        }
+      ],
+      "agreement": "المصدران يبلغان عن وجود ثغرة في نظام iOS (الإصدارات 26 و27) تسمح لتطبيق خبيث بقراءة ملفات تطبيقات أخرى، مما يمكن أن يكشف عبارات الاسترداد (seed phrases) ومفاتيح خاصة لمحافظ العملات المشفرة.",
+      "differences": "The Hacker News يذكر أن أبل أصدرت تحديثات iOS 26 و27 لكن لا تُظهر إصلاحًا صريحًا، بينما BleepingComputer يكرر تحذير بينانس دون الإشارة إلى أي إصلاح من أبل.",
+      "severity": "عالية",
+      "what_happened": "ثغرة في رملية (sandbox) نظام iOS تسمح لتطبيق ضار بالوصول إلى ملفات خاصة بتطبيقات أخرى، بما في ذلك ملفات تخزين المفاتيح السرية للمحافظ الرقمية.",
+      "how_it_happened": "الضعف يكمن في عدم عزل صحيح بين تطبيقات iOS؛ يمكن للمهاجم استغلال صلاحية غير مصممة لقراءة مسارات ملفات التطبيقات الأخرى (sandbox escape). التقنية هي اختراق رملية النظام للوصول إلى ملفات محمية.",
+      "how_handled": "أصدرت بينانس تحذيرًا للمستخدمين لتحديث أجهزتهم وتجنب تثبيت تطبيقات غير موثوقة، وأشارت إلى أن أبل قد أصدرت تحديثات iOS جديدة قد تتضمن إصلاحًا، مع توصية بتمكين التحديثات التلقائية."
     }
   ],
   "terms": [
     {
-      "term": "Authentication Bypass",
-      "explanation": "تجاوز المصادقة يعني قدرة المهاجم على الدخول إلى نظام أو خدمة دون إكمال خطوات التحقق المعتادة (كاسم المستخدم أو كلمة المرور). يحدث ذلك عادةً عندما يكون هناك خلل في منطق التحقق يسمح بعبور العملية إذا تم استيفاء شروط معينة."
+      "term": "Authentication bypass",
+      "explanation": "تجاوز المصادقة هو ضعف يسمح للمهاجمين بتخطي عمليات التحقق من هوية المستخدم والوصول إلى النظام دون الحاجة إلى بيانات اعتماد صالحة. يحدث عادةً بسبب معالجة غير صحيحة للمدخلات أو أخطاء في منطق التحقق."
     },
     {
-      "term": "MFA Bypass",
-      "explanation": "تجاوز المصادقة متعددة العوامل (MFA) يعني أن المهاجم يستطيع تخطي خطوة التحقق الثانية (مثل رمز مؤقت أو إشعار على الهاتف) بسبب ثغرة في تنفيذ MFA. في حالة SonicWall، استُغل خلل في معالجة SAML لتجاوز طلب MFA."
+      "term": "Remote code execution (RCE)",
+      "explanation": "تنفيذ الشيفرة عن بُعد هو قدرة المهاجم على تشغيل شيفرة خبيثة على الجهاز المستهدف من خلال استغلال ثغرة في البرنامج. هذه الهجمات تمكن المتنمر من التحكم الكامل في النظام المخترق."
     },
     {
-      "term": "Industrial Control System (ICS) Vulnerability",
-      "explanation": "ثغرة في أنظمة التحكم الصناعي (ICS) هي ضعف يُستغل في أجهزة مثل PLC أو SCADA التي تدير عمليات المصنع أو البنية التحتية. استغلال هذه الثغرات يمكن أن يغيّر إعدادات التشغيل، كما حدث في هجمات التبريد التي أدت إلى رفع درجات الحرارة."
+      "term": "Zero-day",
+      "explanation": "ثغرة صفرية هي ضعف أمنى غير معروف للمصنع أو لمجتمع الأمان ولا يتوفر له تصحيح بعد. تُستغل مباشرةً من قبل المهاجمين قبل أن تتوفر أي حلول أو تحديثات."
     },
     {
-      "term": "Data Exfiltration",
-      "explanation": "سرقة البيانات (Data Exfiltration) تعني استخراج معلومات حساسة من شبكة أو نظام الضحية إلى خادم يتحكم به المهاجم. مجموعة ShinyHunters نفذت هذه التقنية للحصول على قواعد بيانات ضخمة ثم استخدمتها للابتزاز."
+      "term": "Sandbox escape",
+      "explanation": "هروب الرملية يعني تجاوز العزل الذي يفرضه نظام التشغيل على التطبيقات، ما يسمح لتطبيق خبيث بالوصول إلى ملفات أو موارد تطبيقات أخرى. يُستغل عادةً ضعفًا في آلية العزل أو صلاحيات النظام."
     },
     {
-      "term": "Cloud Misconfiguration",
-      "explanation": "التكوين الخاطئ للسحابة يحدث عندما تُضبط إعدادات الخدمات السحابية (مثل التخزين أو قواعد الوصول) بصورة غير آمنة، ما يسمح للجهات غير المصرح لها بالوصول إلى البيانات. هذا هو السبب الرئيسي وراء تسريب بيانات Iris Plaza."
+      "term": "Use-after-free",
+      "explanation": "استخدام الذاكرة بعد تحريرها هو نوع من أخطاء إدارة الذاكرة يحدث عندما يُحاول البرنامج الوصول إلى كائن تم تحريره مسبقًا. يمكن للمهاجم استغلال هذا الخطأ لتنفيذ شيفرة عشوائية أو الحصول على صلاحيات أعلى."
     }
   ]
 }
