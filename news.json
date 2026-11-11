@@ -1,126 +1,126 @@
 {
-  "updated_at": "2026-11-10T23:24:19.419327+00:00",
+  "updated_at": "2026-11-11T23:39:14.838359+00:00",
   "stories": [
     {
-      "headline": "ثغرة تجاوز المصادقة في Xen Orchestra تُستغل للحصول على صلاحيات إدارية",
+      "headline": "ثغرة حرجة في Zoom Workplace تسمح بارتفاع غير مصدق للامتيازات",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html"
+        },
+        {
+          "name": "SecurityWeek",
+          "link": "https://www.securityweek.com/asus-zoom-release-security-patches/"
+        }
+      ],
+      "agreement": "تؤكد جميع المصادر وجود ثغرتين في Zoom Workplace لنظام Windows، إحداهما تسمح بارتفاع غير مصدق للامتيازات مع درجة خطر عالية (CVSS 9.6).",
+      "differences": "لا يوجد",
+      "severity": "عالية",
+      "what_happened": "تم اكتشاف ثغرة في Zoom Workplace تمكن المهاجم غير الموثق من الحصول على صلاحيات إدارية على النظام المستهدف.",
+      "how_it_happened": "تستغل الثغرة ضعف في التحقق من صحة الإدخال، مما يسمح بتمرير بيانات غير صالحة إلى مكوّن داخلي يؤدي إلى تنفيذ تعليمات برمجية بامتيازات مرتفعة (Privilege Escalation).",
+      "how_handled": "أصدرت Zoom تحديثات تصحيحية للبرنامج، ونصحت المستخدمين بتطبيقها فورًا وتفعيل التحديثات التلقائية."
+    },
+    {
+      "headline": "ثغرات Cisco BroadWorks وOpenwave تُستغل بنشاط في هجمات حية",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/cisco-broadworks-and-openwave-flaws.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "link": "https://www.bleepingcomputer.com/news/security/cisa-flags-cisco-broadworks-flaw-as-actively-exploited-in-attacks/"
+        },
+        {
+          "name": "SecurityWeek",
+          "link": "https://www.securityweek.com/threat-actors-exploit-openwave-cisco-broadworks-vulnerabilities/"
+        }
+      ],
+      "agreement": "تشير جميع المصادر إلى أن الثغرتين (CVE-2026-20320 وCVE-2026-111793) تم إضافتهما إلى قائمة الثغرات المستغلة من قبل CISA، وأن هناك دلائل على استغلالهما الفعلي في الهجمات.",
+      "differences": "موقع SecurityWeek يضيف تفاصيل حول كيفية استغلال الثغرات لكشف معلومات التكوين، بينما BleepingComputer يركز على التحذير من استغلالها النشط.",
+      "severity": "عالية",
+      "what_happened": "تم استغلال ثغرتين في منتجات Cisco BroadWorks وOpenwave Messaging لسرقة معلومات حساسة وتنفيذ أوامر عن بُعد.",
+      "how_it_happened": "أحد الثغرات تعتمد على ضعف في معالجة كائنات XML الخارجية (XXE) والثانية على عدم التحقق من صلاحية طلبات REST، مما يتيح للمهاجم تخطي المصادقة وتنفيذ تعليمات برمجية عن بُعد (Remote Code Execution).",
+      "how_handled": "قامت Cisco بنشر تصحيحات فورية للمنتجات المتأثرة، وتم توجيه العملاء لتطبيق التحديثات فورًا واستخدام ممارسات تقليل التهديد مثل تصفية المدخلات."
+    },
+    {
+      "headline": "منصة AntiFox AI تُستَخدم لسرقة مفاتيح AWS وإجراء اختراقات جانبية",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/antifox-ai-pentesting-platform-linked.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "link": "https://www.bleepingcomputer.com/news/security/hackers-use-antifox-ai-agents-in-aws-credential-theft-attacks/"
+        }
+      ],
+      "agreement": "المصادر توافق على أن منصة AntiFox، التي تُعرّف كأداة اختبار اختراق ذاتية‑التحكم، استُخدمت في حملات سرقة بيانات اعتماد AWS وتوسيع الوصول داخل البيئات المخترقة.",
+      "differences": "لا يوجد",
+      "severity": "عالية",
+      "what_happened": "تم استغلال AntiFox للحصول على مفاتيح وصول AWS ثم استخدامها للتنقل الجانبي داخل حسابات سحابية متعددة.",
+      "how_it_happened": "قام المهاجم بنشر نسخ من AntiFox على خوادم Alibaba Cloud، واستغل ضعف في إعدادات الأمان لتثبيت البرنامج، ثم استخدم وظائف جمع الاعتمادات (Credential Harvesting) للحصول على مفاتيح AWS، مما مكنه من تنفيذ هجمات سحابية (Cloud Credential Theft).",
+      "how_handled": "أعلنت كل من AntiFox ومزودي السحابة عن تحديثات أمان وإجراءات مراقبة للأنشطة غير الاعتيادية، ونُصِح العملاء بتدوير مفاتيح AWS وتطبيق حد أدنى للامتيازات (Least‑Privilege)."
+    },
+    {
+      "headline": "اختراق Railway يؤدي إلى سرقة مفاتيح AI وتوليد مصاريف غير مصرح بها بقيمة 740,000 دولار",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/railway-says-stolen-customer-ai-keys.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "link": "https://www.bleepingcomputer.com/news/apple/railway-breach-leads-to-740-000-in-fraudulent-ai-charges/"
+        }
+      ],
+      "agreement": "كلا المصدرين يقرّان أن مفاتيح مزودي الذكاء الاصطناعي المخزنة على منصة Railway سُرقت واستخدمت لتوليد استهلاك غير مصرح به بقيمة تقارب 740,000 دولار.",
+      "differences": "لا يوجد",
+      "severity": "عالية",
+      "what_happened": "سرق المهاجمون مفاتيح API للذكاء الاصطناعي من قاعدة بيانات Railway، ثم استخدموها لتشغيل خدمات سحابية مكلفة دون إذن.",
+      "how_it_happened": "استغل المهاجم ثغرة في نظام تخزين الأسرار (Secret Management) داخل Railway، مما سمح بالوصول غير المصرح به إلى مفاتيح API (Credential Exposure) واستخدامها لتشغيل موارد سحابية (Unauthorized Cloud Resource Consumption).",
+      "how_handled": "قامت Railway بتعطيل المفاتيح المتسربة، وتعهدت بدفع الرسوم غير المشروعة للعملاء، وأطلقت تحديثات لتعزيز آليات التحكم في الأسرار وتطبيق مراقبة الاستخدام الفوري."
+    },
+    {
+      "headline": "ثغرة تخطي المصادقة في Xen Orchestra تُستغل لسرقة صلاحيات إدارية",
       "sources": [
         {
           "name": "The Hacker News",
           "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html"
         },
         {
-          "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/"
-        }
-      ],
-      "agreement": "كلا المصدرين يؤكدان وجود ثغرة حرجة في Xen Orchestra تسمح بتجاوز المصادقة عبر معالجة غير صحيحة لملفات تعريف الارتباط (cookies) في واجهة REST، وأن المهاجمين يستغلونها بنشاط للحصول على صلاحيات إدارية على خوادم XCP‑ng الافتراضية.",
-      "differences": "موقع The Hacker News يذكر أن الثغرة مسجلة تحت VSA‑2026‑062 وتوضح تفاصيل تحليل ملف تعريف الارتباط، بينما BleepingComputer يركز على نتيجة الاستغلال وهي اختطاف خوادم الأجهزة الافتراضية.",
-      "severity": "عالية",
-      "what_happened": "تمكن المهاجمون من استغلال ثغرة في معالجة ملفات تعريف الارتباط لواجهة REST في Xen Orchestra، ما أتاح لهم تخطي عملية المصادقة والحصول على صلاحيات إدارية على خوادم الافتراضية.",
-      "how_it_happened": "الضعف يكمن في عدم التحقق الصحيح من قيمة authenticationToken المرسلة عبر طلبات REST؛ يمكن للمهاجم إرسال قيمة معدلة تؤدي إلى تحويل الكائن إلى فارغ ({}) وبالتالي تجاوز المصادقة. التقنية المستخدمة هي تجاوز المصادقة (authentication bypass) عبر إدخال غير متوقع في API.",
-      "how_handled": "أصدرت شركة Vates VMS تحديثات تصحيحية لثغرة Xen Orchestra، وأوصت جميع العملاء بترقية الأنظمة فورًا وتغيير بيانات الاعتماد الإدارية ومراجعة سجلات الوصول."
-    },
-    {
-      "headline": "مجموعة Turla تستخدم برنامج Cereal لاختراق خوادم Microsoft Exchange وسرقة رسائل البريد الإلكتروني الحكومية",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/russian-turla-hackers-use-new-cereal.html"
-        },
-        {
-          "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/turla-hackers-use-new-ceral-malware-to-spy-on-govt-exchange-servers/"
-        }
-      ],
-      "agreement": "كلا المصدرين يوضحان أن مجموعة Turla (المعروفة بـ Snake) استُخدمت أداة Cereal الجديدة لاختراق خوادم Exchange في مؤسسات حكومية وجمع رسائل البريد الإلكتروني بسرية.",
-      "differences": "The Hacker News يضيف أن Cereal أداة تجسسية غير موثقة ومُصممة بشكل معياري، بينما BleepingComputer يركز على هدف التجسس على الخوادم الحكومية فقط دون ذكر تفاصيل الهندسة المعمارية للأداة.",
-      "severity": "عالية",
-      "what_happened": "تم اختراق خوادم Microsoft Exchange باستخدام مجموعة أدوات Cereal، مما مكن القراصنة من استخراج محتويات البريد الإلكتروني للجهات الحكومية المستهدفة.",
-      "how_it_happened": "اعتمدت الهجمة على استغلال ثغرات (معروفة أو صفرية) في خوادم Exchange، تلاها نشر برمجية Cereal التي تضمن مكوّنات للتمكن من الحصول على صلاحيات النظام وجمع البريد الإلكتروني. التقنية هي استغلال ثغرات خادم البريد مع تنفيذ شيفرة خبيثة (remote code execution).",
-      "how_handled": "قامت مايكروسوفت بإصدار تحديثات أمان عاجلة لخوادم Exchange، ونصحت المؤسسات بتطبيق التصحيحات فورًا، وفحص السجلات للبحث عن أي نشاط غير معتاد، وتحديث بيانات الاعتماد."
-    },
-    {
-      "headline": "SAP تصدر تصحيحات لعدد أربع ثغرات حرجة بدرجة CVSS 10.0 تسمح بتنفيذ شيفرة عن بُعد دون مصادقة",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/sap-patches-four-cvss-100-flaws.html"
-        },
-        {
-          "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/sap-patches-four-maximum-severity-security-vulnerabilities/"
-        },
-        {
           "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/sap-patches-critical-icm2shell-proxygate-vulnerabilities/"
+          "link": "https://www.securityweek.com/critical-xen-orchestra-flaws-exploited-in-attacks/"
         }
       ],
-      "agreement": "المصادر الثلاثة تؤكد أن SAP أصدرت تصحيحات لعدد أربع عيوب حرجة (ثلاثة في خادم NetWeaver وواحدة في Web Dispatcher) تُصنَّف كـ CVSS 10.0 وتمكن المهاجمين من تنفيذ شيفرة عن بُعد بدون أي مصادقة.",
-      "differences": "The Hacker News يذكر تفاصيل كل ثغرة على حدة، BleepingComputer يضيف أن هناك 35 ثغرة إجمالاً في التحديث مع التركيز على الأربعة ذات الخطورة القصوى، وSecurityWeek يذكر أسماء الثغرات (ICM2SHELL وProxyGate) وتوضيح أن بعضها يؤثر على البوابة (Gateway).",
+      "agreement": "تؤكد المصادر وجود ثغرة تخطي مصادقة حادة في Xen Orchestra تُستغل بنشاط للحصول على صلاحيات إدارية على عقد XCP‑ng.",
+      "differences": "لا يوجد",
       "severity": "عالية",
-      "what_happened": "ثغرات في مكوّنات NetWeaver وWeb Dispatcher في أنظمة SAP تسمح للمتسللين بالوصول غير المصرح به وتنفيذ شيفرة خبيثة على الخوادم المستهدفة.",
-      "how_it_happened": "تتضمن العيوب أخطاء في معالجة الإدخالات (مثل عدم التحقق من صحة البيانات أو تسلسل غير آمن) تؤدي إلى تنفيذ شيفرة عن بُعد دون الحاجة لتسجيل الدخول. التقنية هي تنفيذ شيفرة عن بُعد (RCE) عبر استغلال ثغرات في طبقة التطبيق والبروكسي.",
-      "how_handled": "نشرت SAP تحديثات تصحيحية لجميع الإصدارات المتأثرة، وطالبت العملاء بتطبيقها فورًا، بالإضافة إلى توصية بإعادة تشغيل الخدمات ومراجعة سجلات الأمان."
-    },
-    {
-      "headline": "جوجل تصدر تحديثًا طارئًا لسد الثغرة السابعة من نوع use‑after‑free في Chrome التي تُستغل بنشاط",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/google-issues-chrome-security-update.html"
-        },
-        {
-          "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/google-patches-eighth-chrome-zero-day-exploited-in-attacks-this-year/"
-        }
-      ],
-      "agreement": "المصدران يعلنان عن إصدار جوجل لتحديث طارئ لسد ثغرة use‑after‑free في مكوّن XML بالمتصفح Chrome، وهي الثغرة السابعة من نوع zero‑day التي تُستغل حاليًا في هجمات.",
-      "differences": "The Hacker News يحدد معرف الثغرة CVE‑2026‑125350 ويصفها بأنها نقص في الذاكرة من نوع use‑after‑free، بينما BleepingComputer يركز على كونها الثغرة الثامنة التي تم استغلالها خلال العام دون ذكر معرف CVE.",
-      "severity": "عالية",
-      "what_happened": "استغل المهاجمون ثغرة في معالجة XML داخل Chrome تسمح لهم بالوصول إلى ذاكرة محررة مسبقًا (use‑after‑free) لتنفيذ شيفرة عشوائية على الجهاز المستهدف.",
-      "how_it_happened": "الضعف يحدث عندما يحاول المتصفح الوصول إلى كائن تم تحريره في الذاكرة بسبب معالجة XML غير آمنة. التقنية المستخدمة هي استغلال خلل في إدارة الذاكرة (memory corruption) يؤدي إلى تنفيذ شيفرة عن بُعد.",
-      "how_handled": "قامت جوجل بإصدار تحديث أمان فوري لجميع إصدارات Chrome، ودعت المستخدمين إلى تحديث المتصفح فورًا وتفعيل التحديثات التلقائية."
-    },
-    {
-      "headline": "بينانس تحذر من ثغرة هروب من رملية iOS تسمح بقراءة ملفات التطبيقات الأخرى وكشف مفاتيح المحافظ المشفرة",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/binance-warns-of-ios-sandbox-escape.html"
-        },
-        {
-          "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/binance-warns-of-ios-flaw-that-could-leak-crypto-wallet-secrets/"
-        }
-      ],
-      "agreement": "المصدران يبلغان عن وجود ثغرة في نظام iOS (الإصدارات 26 و27) تسمح لتطبيق خبيث بقراءة ملفات تطبيقات أخرى، مما يمكن أن يكشف عبارات الاسترداد (seed phrases) ومفاتيح خاصة لمحافظ العملات المشفرة.",
-      "differences": "The Hacker News يذكر أن أبل أصدرت تحديثات iOS 26 و27 لكن لا تُظهر إصلاحًا صريحًا، بينما BleepingComputer يكرر تحذير بينانس دون الإشارة إلى أي إصلاح من أبل.",
-      "severity": "عالية",
-      "what_happened": "ثغرة في رملية (sandbox) نظام iOS تسمح لتطبيق ضار بالوصول إلى ملفات خاصة بتطبيقات أخرى، بما في ذلك ملفات تخزين المفاتيح السرية للمحافظ الرقمية.",
-      "how_it_happened": "الضعف يكمن في عدم عزل صحيح بين تطبيقات iOS؛ يمكن للمهاجم استغلال صلاحية غير مصممة لقراءة مسارات ملفات التطبيقات الأخرى (sandbox escape). التقنية هي اختراق رملية النظام للوصول إلى ملفات محمية.",
-      "how_handled": "أصدرت بينانس تحذيرًا للمستخدمين لتحديث أجهزتهم وتجنب تثبيت تطبيقات غير موثوقة، وأشارت إلى أن أبل قد أصدرت تحديثات iOS جديدة قد تتضمن إصلاحًا، مع توصية بتمكين التحديثات التلقائية."
+      "what_happened": "المهاجمون استغلوا ضعف في معالجة ملفات تعريف الارتباط (cookies) لتجاوز آلية المصادقة في Xen Orchestra والحصول على وصول إدارى كامل.",
+      "how_it_happened": "ثغرة في تحليل قيمة \"authenticationToken\" تؤدي إلى تحويل بيانات غير صالحة إلى كائن فارغ يُقبل كمعرف صالح، مما يسمح بتجاوز المصادقة (Authentication Bypass) ثم تنفيذ أوامر إدارية (Privilege Escalation) على نظام الإدارة الافتراضية.",
+      "how_handled": "أصدرت Vates VMS تصحيحًا للثغرة، ودعت المستخدمين إلى تطبيق التحديث فورًا وتفعيل مراقبة الدخول غير الاعتيادية."
     }
   ],
   "terms": [
     {
-      "term": "Authentication bypass",
-      "explanation": "تجاوز المصادقة هو ضعف يسمح للمهاجمين بتخطي عمليات التحقق من هوية المستخدم والوصول إلى النظام دون الحاجة إلى بيانات اعتماد صالحة. يحدث عادةً بسبب معالجة غير صحيحة للمدخلات أو أخطاء في منطق التحقق."
+      "term": "Privilege Escalation",
+      "explanation": "ارتفاع الامتيازات هو تقنية يستخدمها المهاجم للحصول على صلاحيات أعلى من تلك الممنوحة له أصلاً، عادةً عبر استغلال ضعف في التحقق من الإدخال أو الأخطاء في إدارة الذاكرة."
     },
     {
-      "term": "Remote code execution (RCE)",
-      "explanation": "تنفيذ الشيفرة عن بُعد هو قدرة المهاجم على تشغيل شيفرة خبيثة على الجهاز المستهدف من خلال استغلال ثغرة في البرنامج. هذه الهجمات تمكن المتنمر من التحكم الكامل في النظام المخترق."
+      "term": "Authentication Bypass",
+      "explanation": "تخطي المصادقة يعني أن المهاجم يستطيع تجاوز آلية التحقق من الهوية، غالبًا عبر استغلال معالجة غير صحيحة للبيانات مثل ملفات تعريف الارتباط أو طلبات الـ REST."
     },
     {
-      "term": "Zero-day",
-      "explanation": "ثغرة صفرية هي ضعف أمنى غير معروف للمصنع أو لمجتمع الأمان ولا يتوفر له تصحيح بعد. تُستغل مباشرةً من قبل المهاجمين قبل أن تتوفر أي حلول أو تحديثات."
+      "term": "Credential Theft",
+      "explanation": "سرقة الاعتمادات هي عملية استخراج مفاتيح أو كلمات مرور من الأنظمة المستهدفة، ويمكن أن تتم عبر تسريب الأسرار المخزنة أو اعتراض الاتصالات غير المشفرة."
     },
     {
-      "term": "Sandbox escape",
-      "explanation": "هروب الرملية يعني تجاوز العزل الذي يفرضه نظام التشغيل على التطبيقات، ما يسمح لتطبيق خبيث بالوصول إلى ملفات أو موارد تطبيقات أخرى. يُستغل عادةً ضعفًا في آلية العزل أو صلاحيات النظام."
+      "term": "Remote Code Execution",
+      "explanation": "تنفيذ التعليمات البرمجية عن بُعد يسمح للمهاجم بتشغيل شفرات خبيثة على الجهاز المستهدف دون الحاجة إلى وصول مادي، وغالبًا ما يعتمد على ثغرات في الخدمات الشبكية أو التطبيقات."
     },
     {
-      "term": "Use-after-free",
-      "explanation": "استخدام الذاكرة بعد تحريرها هو نوع من أخطاء إدارة الذاكرة يحدث عندما يُحاول البرنامج الوصول إلى كائن تم تحريره مسبقًا. يمكن للمهاجم استغلال هذا الخطأ لتنفيذ شيفرة عشوائية أو الحصول على صلاحيات أعلى."
+      "term": "Zero‑Day Vulnerability",
+      "explanation": "ثغرة اليوم الصفرية هي ضعف أمان لم يُعلن عنه بعد للمُصنِّع أو لم يُصدر له تصحيح، ما يجعلها قيمة عالية للمهاجمين قبل أن يتم معالجتها."
     }
   ]
 }
