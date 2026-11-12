@@ -1,126 +1,138 @@
 {
-  "updated_at": "2026-11-11T23:39:14.838359+00:00",
+  "updated_at": "2026-11-12T23:30:02.451000+00:00",
   "stories": [
     {
-      "headline": "ثغرة حرجة في Zoom Workplace تسمح بارتفاع غير مصدق للامتيازات",
+      "headline": "ثغرة SignDrop الصفرية في نظام ويندوز تمنح صلاحيات SYSTEM",
       "sources": [
         {
           "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html"
-        },
-        {
-          "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/asus-zoom-release-security-patches/"
-        }
-      ],
-      "agreement": "تؤكد جميع المصادر وجود ثغرتين في Zoom Workplace لنظام Windows، إحداهما تسمح بارتفاع غير مصدق للامتيازات مع درجة خطر عالية (CVSS 9.6).",
-      "differences": "لا يوجد",
-      "severity": "عالية",
-      "what_happened": "تم اكتشاف ثغرة في Zoom Workplace تمكن المهاجم غير الموثق من الحصول على صلاحيات إدارية على النظام المستهدف.",
-      "how_it_happened": "تستغل الثغرة ضعف في التحقق من صحة الإدخال، مما يسمح بتمرير بيانات غير صالحة إلى مكوّن داخلي يؤدي إلى تنفيذ تعليمات برمجية بامتيازات مرتفعة (Privilege Escalation).",
-      "how_handled": "أصدرت Zoom تحديثات تصحيحية للبرنامج، ونصحت المستخدمين بتطبيقها فورًا وتفعيل التحديثات التلقائية."
-    },
-    {
-      "headline": "ثغرات Cisco BroadWorks وOpenwave تُستغل بنشاط في هجمات حية",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/cisco-broadworks-and-openwave-flaws.html"
+          "link": "https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html"
         },
         {
           "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/cisa-flags-cisco-broadworks-flaw-as-actively-exploited-in-attacks/"
+          "link": "https://www.bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges/"
+        }
+      ],
+      "agreement": "المصدران يؤكدان وجود ثغرة صفرية جديدة تُدعى SignDrop تستغل ميزة Common Log File System في ويندوز، وتمكن مستخدم محلي من الحصول على صلاحيات SYSTEM عبر توجيه مسار الملفات.",
+      "differences": "لا يوجد",
+      "severity": "عالية",
+      "what_happened": "تم الكشف عن استغلال يسمح للمهاجمين بالحصول على صلاحيات النظام الكاملة على أجهزة ويندوز.",
+      "how_it_happened": "الثغرة تستغل طريقة إنشاء ملفات مرافقة في برنامج تشغيل clfs.sys عندما يفتح عملية ذات صلاحيات مرتفعة سجلًا مُجهّزًا مسبقًا، حيث يتم إعادة توجيه المسار إلى ملف يتحكم به المهاجم، ما يمنحه وصولًا إلى نواة النظام. الفئة التقنية هي استغلال ضعف في التحكم بالمسارات (Path Redirection) داخل سائق النظام.",
+      "how_handled": "تم نشر تصحيح سريع من مايكروسوفت لمعالجة السائق وإيقاف إمكانية استغلال إعادة توجيه المسار، وتم توجيه المستخدمين لتحديث أنظمتهم فوراً."
+    },
+    {
+      "headline": "ثغرة خطيرة في Red Hat Quay تسمح بقراءة وكتابة الصور الخاصة في سجل الحاويات",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/critical-red-hat-quay-flaw-lets.html"
         },
         {
           "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/threat-actors-exploit-openwave-cisco-broadworks-vulnerabilities/"
+          "link": "https://www.securityweek.com/critical-red-hat-quay-vulnerability-could-expose-private-container-images/"
         }
       ],
-      "agreement": "تشير جميع المصادر إلى أن الثغرتين (CVE-2026-20320 وCVE-2026-111793) تم إضافتهما إلى قائمة الثغرات المستغلة من قبل CISA، وأن هناك دلائل على استغلالهما الفعلي في الهجمات.",
-      "differences": "موقع SecurityWeek يضيف تفاصيل حول كيفية استغلال الثغرات لكشف معلومات التكوين، بينما BleepingComputer يركز على التحذير من استغلالها النشط.",
+      "agreement": "كلا المصدرين يذكران وجود ثغرة حرجة في نظام Red Hat Quay تمكّن المهاجم من قراءة وتعديل جميع الصور الخاصة في أي مستودع، حتى بدون حساب إذا كان الوصول المجهول مفعلاً، وقد أصدرت الشركة إصدارات مصححة.",
+      "differences": "لا يوجد",
       "severity": "عالية",
-      "what_happened": "تم استغلال ثغرتين في منتجات Cisco BroadWorks وOpenwave Messaging لسرقة معلومات حساسة وتنفيذ أوامر عن بُعد.",
-      "how_it_happened": "أحد الثغرات تعتمد على ضعف في معالجة كائنات XML الخارجية (XXE) والثانية على عدم التحقق من صلاحية طلبات REST، مما يتيح للمهاجم تخطي المصادقة وتنفيذ تعليمات برمجية عن بُعد (Remote Code Execution).",
-      "how_handled": "قامت Cisco بنشر تصحيحات فورية للمنتجات المتأثرة، وتم توجيه العملاء لتطبيق التحديثات فورًا واستخدام ممارسات تقليل التهديد مثل تصفية المدخلات."
+      "what_happened": "استغل المهاجمون ضعفًا في إعدادات Quay للوصول إلى صور الحاويات الخاصة وتعديلها أو استبدالها.",
+      "how_it_happened": "الثغرة تكمن في السماح بالوصول المجهول (anonymous) إلى سجل الحاويات بشكل افتراضي، مما يتيح لأي شخص إرسال طلبات إلى API الخاص بـ Quay دون مصادقة. باستخدام طلبات مخصّصة، يمكن للمهاجم قراءة وتحديث ملفات الصور المخزنة. الفئة التقنية هي تجاوز التحكم في المصادقة (Authentication Bypass) في واجهة برمجة التطبيقات.",
+      "how_handled": "قامت Red Hat بإصدار إصدارات مُحدثة من Quay تُعطّل الوصول المجهول افتراضيًا وتُصحّح عملية التحقق من الهوية، مع توجيه العملاء لتطبيق التحديثات فورًا."
     },
     {
-      "headline": "منصة AntiFox AI تُستَخدم لسرقة مفاتيح AWS وإجراء اختراقات جانبية",
+      "headline": "برنامج SCKit الضار يستهدف بيئات ScreenConnect ويُسربه إلى مزودي الخدمات المُدارة (MSPs)",
       "sources": [
         {
           "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/antifox-ai-pentesting-platform-linked.html"
+          "link": "https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html"
         },
         {
           "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/hackers-use-antifox-ai-agents-in-aws-credential-theft-attacks/"
-        }
-      ],
-      "agreement": "المصادر توافق على أن منصة AntiFox، التي تُعرّف كأداة اختبار اختراق ذاتية‑التحكم، استُخدمت في حملات سرقة بيانات اعتماد AWS وتوسيع الوصول داخل البيئات المخترقة.",
-      "differences": "لا يوجد",
-      "severity": "عالية",
-      "what_happened": "تم استغلال AntiFox للحصول على مفاتيح وصول AWS ثم استخدامها للتنقل الجانبي داخل حسابات سحابية متعددة.",
-      "how_it_happened": "قام المهاجم بنشر نسخ من AntiFox على خوادم Alibaba Cloud، واستغل ضعف في إعدادات الأمان لتثبيت البرنامج، ثم استخدم وظائف جمع الاعتمادات (Credential Harvesting) للحصول على مفاتيح AWS، مما مكنه من تنفيذ هجمات سحابية (Cloud Credential Theft).",
-      "how_handled": "أعلنت كل من AntiFox ومزودي السحابة عن تحديثات أمان وإجراءات مراقبة للأنشطة غير الاعتيادية، ونُصِح العملاء بتدوير مفاتيح AWS وتطبيق حد أدنى للامتيازات (Least‑Privilege)."
-    },
-    {
-      "headline": "اختراق Railway يؤدي إلى سرقة مفاتيح AI وتوليد مصاريف غير مصرح بها بقيمة 740,000 دولار",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/railway-says-stolen-customer-ai-keys.html"
+          "link": "https://www.bleepingcomputer.com/news/security/new-worm-like-sckit-malware-targets-msps-in-screenconnect-attacks/"
         },
         {
           "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/apple/railway-breach-leads-to-740-000-in-fraudulent-ai-charges/"
-        }
-      ],
-      "agreement": "كلا المصدرين يقرّان أن مفاتيح مزودي الذكاء الاصطناعي المخزنة على منصة Railway سُرقت واستخدمت لتوليد استهلاك غير مصرح به بقيمة تقارب 740,000 دولار.",
-      "differences": "لا يوجد",
-      "severity": "عالية",
-      "what_happened": "سرق المهاجمون مفاتيح API للذكاء الاصطناعي من قاعدة بيانات Railway، ثم استخدموها لتشغيل خدمات سحابية مكلفة دون إذن.",
-      "how_it_happened": "استغل المهاجم ثغرة في نظام تخزين الأسرار (Secret Management) داخل Railway، مما سمح بالوصول غير المصرح به إلى مفاتيح API (Credential Exposure) واستخدامها لتشغيل موارد سحابية (Unauthorized Cloud Resource Consumption).",
-      "how_handled": "قامت Railway بتعطيل المفاتيح المتسربة، وتعهدت بدفع الرسوم غير المشروعة للعملاء، وأطلقت تحديثات لتعزيز آليات التحكم في الأسرار وتطبيق مراقبة الاستخدام الفوري."
-    },
-    {
-      "headline": "ثغرة تخطي المصادقة في Xen Orchestra تُستغل لسرقة صلاحيات إدارية",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html"
+          "link": "https://www.bleepingcomputer.com/news/security/active-screenconnect-attacks-breach-msps-impact-dozens-of-organizations/"
         },
         {
           "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/critical-xen-orchestra-flaws-exploited-in-attacks/"
+          "link": "https://www.securityweek.com/hackers-deploy-malware-in-fresh-screenconnect-campaign/"
         }
       ],
-      "agreement": "تؤكد المصادر وجود ثغرة تخطي مصادقة حادة في Xen Orchestra تُستغل بنشاط للحصول على صلاحيات إدارية على عقد XCP‑ng.",
+      "agreement": "جميع المصادر تُشير إلى أن حملة هجمات تستغل ثغرة حرجة في برنامج ScreenConnect (CVE-2026-84869) وتوزع برمجية SCKit التي تتحول إلى دودة تُعيد انتشار نفسها بين عملاء مزودي الخدمات المُدارة، وتُتيح للمهاجمين الوصول إلى شبكات متعددة.",
+      "differences": "المقال 6 يركّز على استغلال الثغرة المُصَحَّحة مسبقًا، بينما 15 يصف SCKit كبرمجية شبيهة بالدودة، و28 يوضح أن الحملة نشطة وتؤثر على عشرات المنظمات، و46 يضيف أن الهجوم يستخدم امتدادًا شرعيًا لتجاوز المصادقة في ScreenConnect.",
+      "severity": "عالية",
+      "what_happened": "تم اختراق أنظمة مزودي الخدمات المُدارة عبر استغلال ثغرة في برنامج التحكم عن بُعد ScreenConnect، ونشر برمجية SCKit التي تُمكّن المهاجم من السيطرة على أجهزة العملاء وشبكاتهم.",
+      "how_it_happened": "المهاجمون استغلوا ضعفًا في التحقق من صحة الامتدادات في ScreenConnect لتجاوز آلية المصادقة، ثم نصبوا أداة SCKit التي تعمل كدودة تنتقل عبر جلسات الدعم التقنية إلى أنظمة العملاء. الفئة التقنية هي استغلال ثغرة تنفيذ تعليمات برمجية عن بُعد (Remote Code Execution) مع ارتكاب هجوم سلاسل إمداد (Supply Chain) عبر أداة إدارة الوصول عن بُعد.",
+      "how_handled": "قامت ConnectWise بإصدار تصحيحات للثغرة، وتم نشر تحديثات أمان لـ ScreenConnect، بالإضافة إلى إرشادات للـ MSPs لإزالة SCKit ومراجعة سجلات الجلسات المتصلة."
+    },
+    {
+      "headline": "ثغرات صفرية في منصة N-able N‑central تُستغل لتثبيت برامج تعدين عملات رقمية",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/new-n-central-exploits-work-against.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "link": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/"
+        },
+        {
+          "name": "SecurityWeek",
+          "link": "https://www.securityweek.com/hackers-target-n-central-zero-days-as-n-able-rushes-patches/"
+        },
+        {
+          "name": "darkreading",
+          "link": "https://www.darkreading.com/endpoint-security/n-able-n-central-offline-33-flaws"
+        }
+      ],
+      "agreement": "جميع المصادر يذكرون أن الباحثين أعلنوا عن مجموعة من الثغرات الصفرية في نسخة on‑premise من N‑central، خاصةً CVE المتعلق بـ Legacy API المكشوف على الإنترنت، وقد استغلها المهاجمون لتسلل خوادم وشبكات العملاء ونشر مُعدّنات عملات رقمية.",
+      "differences": "المقال 8 يركز على أن الثغرة تعتمد على تمكين Legacy API للجمهور، 18 يضيف أن الاستغلال بدأ ساعات بعد كشف PoC، 47 يذكر أن الهجوم استهدف الثغرات أثناء عملية تصحيح N‑able، و58 يوضح أن N‑able أوقفت المنصة مؤقتًا بعد اكتشاف 33 ثغرة.",
+      "severity": "عالية",
+      "what_happened": "تم استغلال عدة ثغرات صفرية في منصة إدارة البُنى التحتية N‑central لتمكين المهاجمين من تنفيذ أوامر عن بُعد ونشر برامج تعدين داخل الأنظمة المتأثرة.",
+      "how_it_happened": "المهاجمون استغلوا إعدادًا غير آمن للـ Legacy API الذي كان مكشوفًا على الإنترنت، ما أتاح لهم إرسال طلبات غير مصادقة تسمح بتنفيذ أوامر نظامية على الخادم. الفئة التقنية هي تجاوز المصادقة (Authentication Bypass) مع تنفيذ أوامر عن بُعد (Remote Code Execution) عبر واجهة برمجة التطبيقات.",
+      "how_handled": "قامت N‑able بإصدار تصحيحات سريعة للثغرات، وأغلقت الـ Legacy API عن الوصول العام، كما أوقفت المنصة مؤقتًا لتطبيق التصحيحات، وأُعيد توجيه العملاء لتحديث أنظمتهم فورًا."
+    },
+    {
+      "headline": "انقطاع عالمي في خدمات Microsoft 365 يؤثر على Outlook وTeams وCopilot",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "link": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/"
+        },
+        {
+          "name": "SecurityWeek",
+          "link": "https://www.securityweek.com/microsoft-365-outage-disrupts-outlook-exchange-online-and-teams/"
+        }
+      ],
+      "agreement": "المصدران يؤكدان حدوث عطل واسع النطاق في منصة Microsoft 365 أدى إلى توقف Outlook، Teams، وCopilot، وأن السبب يعود إلى فشل في فحوصات صحة الخوادم، دون وجود دليل على هجوم إلكتروني.",
       "differences": "لا يوجد",
       "severity": "عالية",
-      "what_happened": "المهاجمون استغلوا ضعف في معالجة ملفات تعريف الارتباط (cookies) لتجاوز آلية المصادقة في Xen Orchestra والحصول على وصول إدارى كامل.",
-      "how_it_happened": "ثغرة في تحليل قيمة \"authenticationToken\" تؤدي إلى تحويل بيانات غير صالحة إلى كائن فارغ يُقبل كمعرف صالح، مما يسمح بتجاوز المصادقة (Authentication Bypass) ثم تنفيذ أوامر إدارية (Privilege Escalation) على نظام الإدارة الافتراضية.",
-      "how_handled": "أصدرت Vates VMS تصحيحًا للثغرة، ودعت المستخدمين إلى تطبيق التحديث فورًا وتفعيل مراقبة الدخول غير الاعتيادية."
+      "what_happened": "تعطلت خدمات Microsoft 365 على مستوى عالمي، مما منع المستخدمين من الوصول إلى البريد الإلكتروني، الدردشة، والذكاء الاصطناعي المدمج.",
+      "how_it_happened": "أثناء عمليات الصيانة اليومية، فشلت فحوصات صحة الخوادم (Health Checks) في التعرف على حالة بعض المكونات، ما أدى إلى إيقاف تشغيل الخدمات تلقائيًا لتجنب أخطاء إضافية. الفئة التقنية هي عطل في استقرار الخدمات (Service Outage) نتيجة لفشل نظام المراقبة.",
+      "how_handled": "أعلنت مايكروسوفت عن بدء التحقيق في السبب الجذري، وأعادت تشغيل الخدمات تدريجيًا بعد استعادة الصحة، مع وعد بتقديم تحديثات لمنع تكرار الحادث."
     }
   ],
   "terms": [
     {
-      "term": "Privilege Escalation",
-      "explanation": "ارتفاع الامتيازات هو تقنية يستخدمها المهاجم للحصول على صلاحيات أعلى من تلك الممنوحة له أصلاً، عادةً عبر استغلال ضعف في التحقق من الإدخال أو الأخطاء في إدارة الذاكرة."
+      "term": "Zero‑day",
+      "explanation": "ثغرة صفرية هي ضعف أمان لا يعرفه سوى القليل من الباحثين أو المهاجمين ولم يتم إصدار تصحيح لها بعد. بمجرد اكتشافها يمكن استغلالها قبل أن تتوفر حلول حماية، ما يجعلها ذات خطر عالٍ."
+    },
+    {
+      "term": "Remote Code Execution (RCE)",
+      "explanation": "تنفيذ التعليمات عن بُعد هو قدرة المهاجم على تشغيل شفرة برمجية على نظام الضحية دون الحاجة إلى وصول محلي. عادةً ما تستغل هذه التقنية ثغرات في الخدمات أو التطبيقات التي تستقبل مدخلات غير موثوقة."
+    },
+    {
+      "term": "Supply Chain Attack",
+      "explanation": "هجوم سلسلة التوريد يهدف إلى اختراق مكوّن أو خدمة في مسار توفير البرمجيات أو البنية التحتية، ثم توزيع البرمجيات المخترقة إلى العملاء. مثال ذلك استغلال ضعف في سجل حاويات Red Hat Quay لسرقة أو تعديل صور الحاويات."
+    },
+    {
+      "term": "Remote Access Trojan (RAT)",
+      "explanation": "برمجية خبيثة تُتيح للمهاجم التحكم عن بُعد في جهاز الضحية، عادةً عبر قناة مخفية داخل أدوات الإدارة الشرعية. تُستَخدم في حملات استهداف مزودي الخدمات المُدارة مثل هجمات ScreenConnect."
     },
     {
       "term": "Authentication Bypass",
-      "explanation": "تخطي المصادقة يعني أن المهاجم يستطيع تجاوز آلية التحقق من الهوية، غالبًا عبر استغلال معالجة غير صحيحة للبيانات مثل ملفات تعريف الارتباط أو طلبات الـ REST."
-    },
-    {
-      "term": "Credential Theft",
-      "explanation": "سرقة الاعتمادات هي عملية استخراج مفاتيح أو كلمات مرور من الأنظمة المستهدفة، ويمكن أن تتم عبر تسريب الأسرار المخزنة أو اعتراض الاتصالات غير المشفرة."
-    },
-    {
-      "term": "Remote Code Execution",
-      "explanation": "تنفيذ التعليمات البرمجية عن بُعد يسمح للمهاجم بتشغيل شفرات خبيثة على الجهاز المستهدف دون الحاجة إلى وصول مادي، وغالبًا ما يعتمد على ثغرات في الخدمات الشبكية أو التطبيقات."
-    },
-    {
-      "term": "Zero‑Day Vulnerability",
-      "explanation": "ثغرة اليوم الصفرية هي ضعف أمان لم يُعلن عنه بعد للمُصنِّع أو لم يُصدر له تصحيح، ما يجعلها قيمة عالية للمهاجمين قبل أن يتم معالجتها."
+      "explanation": "تجاوز المصادقة يعني قدرة المهاجم على تخطي آلية التحقق من الهوية للوصول إلى موارد محمية. يحدث ذلك عندما تكون هناك ثغرة في عملية التحقق أو إعدادات خاطئة، كما في حالة واجهة Legacy API لمنصة N‑central."
     }
   ]
 }
