@@ -1,59 +1,17 @@
 {
-  "updated_at": "2026-11-17T23:39:18.023494+00:00",
+  "updated_at": "2026-11-18T23:39:13.949136+00:00",
   "stories": [
     {
-      "headline": "هجوم سلسلة التوريد عبر منصة Optimizely يُصيب مواقع إخبارية كبرى",
+      "headline": "ثغرة Java4Shell تسمح بتنفيذ كود عن بُعد على تطبيقات Java الشائعة",
       "sources": [
         {
           "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/hijacked-optimizely-scripts-served-card.html"
-        },
-        {
-          "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/optimizely-supply-chain-attack-delivers-malware-to-cnn-fox-news-bbc-salesforce-sites/"
-        },
-        {
-          "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/optimizely-vulnerability-exploited-to-serve-malware-on-major-websites/"
-        },
-        {
-          "name": "darkreading",
-          "link": "https://www.darkreading.com/cyber-risk/optimizely-malware-attacks-third-party-vendor-risks"
-        }
-      ],
-      "agreement": "جميع المصادر تؤكد أن المهاجمين اخترقوا منصة Optimizely وأدخلوا شيفرة جافا سكريبت خبيثة في السكربتات التي تُحمَّل من قبل مواقع العملاء مثل CNN وBBC وZoom، مما أدى إلى تسليم برامج ضارة للزوار.",
-      "differences": "بعض المصادر تذكر عدد المواقع المتأثرة (178 موقعًا) وتفاصيل عن الحمولة (محارف عملات رقمية، أدوات استغلال iOS)، بينما أخرى تُركز على قائمة أوسع من الشركات المتأثرة دون عدد محدد.",
-      "severity": "عالية",
-      "what_happened": "تم اختراق خدمة التجربة التجريبية Optimizely وإضافة شيفرة خبيثة إلى السكربتات التي تُوزَّع إلى آلاف المواقع، مما أدى إلى تسليم برمجيات خبيثة للزوار.",
-      "how_it_happened": "استغل المهاجمون الوصول غير المصرح به إلى أنابيب توزيع السكربتات في Optimizely، وجرّبوا تعديل ملفات JavaScript لتضمين حمولة خبيثة. عندما يحمِّل الموقع السكربت من Optimizely، تُنفَّذ الشيفرة في متصفح الزائر (هجوم سلسلة توريد عبر مكوّن طرف ثالث). الفئة التقنية: هجوم سلسلة التوريد عبر تعديل مكتبة جافا سكريبت.",
-      "how_handled": "قامت Optimizely بسحب السكربتات المخترقة وإصدار تحديثات نظيفة، وطالبت العملاء بتحديث مكتباتهم. الشركات المتضررة أزالت الشيفرة الخبيثة وأعلنت عن الحادث لعملائها، بينما أصدرت أدوات أمان المتصفحات تحذيرات للروابط الضارة."
-    },
-    {
-      "headline": "ثغرات صفرية حرجة في منصة N‑central من N‑able تُستَغل لتثبيت برامج تعدين العملات الرقمية",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/n-able-patches-17-n-central-flaws-as.html"
-        },
-        {
-          "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/n-able-kills-legacy-apis-patches-17-n-central-zero-days/"
+          "link": "https://thehackernews.com/2026/11/java4shell-cve-2026-114938-enables-pre.html"
         },
         {
           "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/weekly-recap-n-able-0-days-windows-0.html"
-        }
-      ],
-      "agreement": "جميع المصادر تقر بأن N‑able نشرت تصحيحًا (Hotfix 3) لسلسلة من 17 ثغرة خطيرة في N‑central، وقد استغل المهاجمون بعضها لتثبيت برامج تعدين.",
-      "differences": "تختلف المصادر في عدد الثغرات المذكور (بعضها يذكر 17، وبعضها يركز على إلغاء واجهات برمجة التطبيقات القديمة) وتفاصيل طريقة الاستغلال.",
-      "severity": "عالية",
-      "what_happened": "اكتُشِفَت عدة ثغرات تنفيذ شيفرة عن بُعد في منصة إدارة النقاط النهائية N‑central، وتم استغلال بعضها لنشر برمجيات تعدين عملات رقمية على الأنظمة المتصلة.",
-      "how_it_happened": "تسمح بعض واجهات برمجة التطبيقات غير المؤمنة في N‑central بتنفيذ أوامر من دون مصادقة مناسبة، ما يمكّن المهاجمين من رفع شيفرات خبيثة أو تشغيل عمليات تعدين عبر الإنترنت. الفئة التقنية: تنفيذ تعليمات عن بُعد عبر واجهة برمجة تطبيقات غير محصّنة.",
-      "how_handled": "أصدرت N‑able تحديثًا أمانياً (Hotfix 3) ألغى الواجهات القديمة وأصلحت الثغرات، ونصحت العملاء بالترقية الفورية ومراجعة سجلات النشاط بحثًا عن عمليات تعدين غير مصرح بها."
-    },
-    {
-      "headline": "ثغرات Java حرجة تسمح بتنفيذ شيفرة عن بُعد بدون مصادقة في Oracle وOpenJDK",
-      "sources": [
+          "link": "https://thehackernews.com/2026/11/cisa-urges-immediate-patching-of.html"
+        },
         {
           "name": "The Hacker News",
           "link": "https://thehackernews.com/2026/11/oracle-to-patch-11-java-flaws-today-as.html"
@@ -61,86 +19,120 @@
         {
           "name": "BleepingComputer",
           "link": "https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/"
-        }
-      ],
-      "agreement": "كلا المصدرين يؤكدان وجود ثغرات خطيرة في بيئات Java تسمح للمهاجمين بتنفيذ شيفرة عن بُعد دون الحاجة لتسجيل الدخول، مع تأثير واسع على تطبيقات مؤسسية مثل Jenkins وJira وConfluence.",
-      "differences": "المصدر الأول يذكر 11 ثغرة عامة في Java SE مع CVE‑2026‑114938، بينما المصدر الثاني يسلط الضوء على ثغرة محددة (Java4Shell) وتأثيرها على منتجات معينة.",
-      "severity": "عالية",
-      "what_happened": "تم الكشف عن مجموعة من الثغرات في منصة Java SE/ OpenJDK تُتيح تنفيذ شيفرة عن بُعد غير مصادقة، مما يهدد ملايين الخوادم التي تشغّل تطبيقات مؤسسية.",
-      "how_it_happened": "تستغل الثغرات آليات التسلسل غير الآمن أو استدعاءات الكود الأصلي داخل JVM، بحيث يمكن للمهاجم إرسال طلبات أو ملفات جافا مُصمَّمة خصيصًا لتفعيل التنفيذ غير المصرح به. الفئة التقنية: تنفيذ تعليمات عن بُعد عبر استغلال تسلسل غير آمن أو خلل في الطبقة الأصلية للغة Java.",
-      "how_handled": "أصدرت Oracle تصحيحًا أمانياً لجميع الإصدارات المتأثرة، ودعت الشركات لتطبيق التحديثات فورًا. كما نشرت منتجي التطبيقات المتأثرة تحديثات وتوصيات لتقليل المخاطر."
-    },
-    {
-      "headline": "استخدام وكلاء ذكاء اصطناعي متعددين لتنفيذ هجمات أوتوماتيكية متقدمة",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/google-finds-hackers-using-ai-agents-to.html"
         },
         {
           "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/ai-framework-autonomously-weaponized-flaws-in-real-attacks-google-says/"
-        },
-        {
-          "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/gemini-ai-agents-repeatedly-bypassed-safeguards-to-attack-real-website/"
+          "link": "https://www.securityweek.com/java4shell-vulnerability-puts-many-enterprise-applications-at-risk-of-takeover/"
         },
         {
           "name": "darkreading",
-          "link": "https://www.darkreading.com/cybersecurity-operations/cyber-experts-fight-artex-antifox"
+          "link": "https://www.darkreading.com/vulnerabilities-threats/java4shell-flaw-threatens-global-java-application-ecosystem"
         }
       ],
-      "agreement": "تُؤكد جميع المصادر أن المهاجمين يستغلون أطر عمل ذكاء اصطناعي ذات وكلاء متعددين (مثل ARTEX, CAIRN, Gemini) لتوليد واستغلال ثغرات برمجية تلقائيًا وإجراء اختراقات متعددة المراحل.",
-      "differences": "بعض المصادر تُركز على اختبار نماذج Gemini في بيئة حية، بينما أخرى تناقش إطارات أوسع مثل ARTEX وCAIRN أو تغييرات سياسات الكشف عن الثغرات في Google Project Zero.",
+      "agreement": "جميع المصادر تؤكد وجود ثغرة حرجة في OpenJDK (Java 17.0.6 وما فوق) تسمح بتنفيذ كود عن بُعد دون مصادقة وتؤثر على تطبيقات مثل Jira وJenkins وKeycloak.",
+      "differences": "بعض المصادر تشير إلى أن الاستغلال يتطلب معالج يدعم AVX‑512 VBMI، بينما أخرى تذكر فقط خطر الكتابة خارج الحدود (out‑of‑bounds write) وتختلف في درجة CVSS (8.1 أو 8.1).",
       "severity": "عالية",
-      "what_happened": "قُدمت دلائل على أن جماعات تهديد تستخدم أنظمة ذكاء اصطناعي لتوليد استغلالات من ملاحظات تحديثات البرمجيات، وتنسيق هجمات متعددة المراحل بشكل ذاتي.",
-      "how_it_happened": "تُدرب نماذج لغة كبيرة على بيانات تصحيح الأخطاء وملاحظات الإصدارات، ثم تُستخدم وكلاء ذكيين لتحديد الثغرات المحتملة، كتابة شيفرات استغلال، واختبارها تلقائيًا ضد الأنظمة المستهدفة. الفئة التقنية: استغلال مدعوم بالذكاء الاصطناعي (AI‑assisted exploit generation) مع أتمتة هجمات متعددة الوكلاء.",
-      "how_handled": "كشفت Google عن التهديد وأعلنت عن تعزيز آليات الدفاع الداخلي، بالإضافة إلى تسريع جداول الكشف عن الثغرات (تقليل المهلة إلى 30 يومًا). تستمر الشركات في تطوير أدوات كشف النشاطات التي تولدها أنظمة الذكاء الاصطناعي."
+      "what_happened": "اكتُشفت ثغرة Java4Shell تسمح للمهاجمين بتنفيذ شيفرة ضارة عن بُعد على خوادم تشغيل Java دون الحاجة لتسجيل الدخول.",
+      "how_it_happened": "الضعف هو كتابة خارج الحدود في مكوّن OpenJDK؛ يُستغل عبر طلبات مدخلة تُعيد كتابة الذاكرة، مما يتيح تحميل شيفرة خبيثة. الاستغلال يتطلب معالج يدعم مجموعة تعليمات AVX‑512 VBMI.",
+      "how_handled": "أصدرت Oracle وOpenJDK تصحيحات عاجلة، ونشرت CISA تحذيراً لتطبيق التحديثات فوراً."
     },
     {
-      "headline": "مجموعة ShinyHunters تسرق بيانات FBI وتبتز شركة تابعة لبوينغ، وتُعتقل عناصرها",
+      "headline": "اختراق حزمة Agent Framework على PyPI وسرقة بيانات الاعتماد السحابية",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "link": "https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/"
+        },
+        {
+          "name": "SecurityWeek",
+          "link": "https://www.securityweek.com/microsoft-agent-framework-releases-poisoned-with-credential-stealer/"
+        }
+      ],
+      "agreement": "جميع المصادر تفيد بأن نسخًا مخربةً من حزمة agent‑framework تم نشرها على PyPI (الإصدارات 1.26.1 و1.26.2) وتقوم بسرقة مفاتيح Azure، GitHub Actions وغيرها عند تشغيل Python.",
+      "differences": "بعض المصادر تذكر أن النسختين نُشرتا بفارق 33 دقيقة فقط، بينما أخرى تركز على إجراءات الاستجابة فقط.",
+      "severity": "عالية",
+      "what_happened": "تم استغلال صلاحية النشر على مستودع PyPI لإدخال شيفرة خبيثة داخل حزمة Agent Framework الرسمية، مما أدى إلى سرقة بيانات اعتماد سحابية عند تشغيلها.",
+      "how_it_happened": "استُغل ثقة سلسلة إمداد البرمجيات؛ قام المهاجمون برفع إصدارات معدّلة من الحزمة تحتوي على منطق سرقة بيانات (credential stealer) يُنفّذ عند استدعاء أي سكربت Python. التقنية هي تلوث حزمة (package poisoning) في بيئة Python.",
+      "how_handled": "تم سحب الإصدارات المتضررة من PyPI، وإصدار إرشادات لتحديث الحزم وإجراء فحص للأنظمة المتأثرة."
+    },
+    {
+      "headline": "ثغرة في منصة Optimizely تُسخّر لتوزيع برمجيات خبيثة على مواقع كبرى",
       "sources": [
         {
           "name": "Krebs on Security",
-          "link": "https://krebsonsecurity.com/2026/10/feds-suspect-ransom-negotiator-ran-shinyhunters-extortion-site/"
+          "link": "https://krebsonsecurity.com/2026/11/attackers-used-optimizely-to-a-b-test-malware-on-top-websites/"
         },
         {
-          "name": "Krebs on Security",
-          "link": "https://krebsonsecurity.com/2026/10/fbi-arrests-founder-of-ransomware-negotiation-firm/"
-        },
-        {
-          "name": "Krebs on Security",
-          "link": "https://krebsonsecurity.com/2026/10/shinyhunters-extorted-boeing-spin-off-prior-to-arrests/"
+          "name": "darkreading",
+          "link": "https://www.darkreading.com/cyber-risk/optimizely-malware-attacks-third-party-vendor-risks"
         }
       ],
-      "agreement": "جميع المصادر تُشير إلى أن مجموعة ShinyHunters سرقت بيانات حساسة من FBI واستخدمتها للابتزاز، بما فيها وحدة تابعة لشركة بوينغ، وأن السلطات الأمريكية ألقت القبض على أعضاء رئيسيين في المجموعة.",
-      "differences": "بعض المصادر تُبرز دور شركات وساطة الفدية في عملية الابتزاز، بينما أخرى تُركز على تفاصيل الاعتقالات وتعاون المشتبه به الأردني مع مكتب التحقيقات الفدرالي.",
+      "agreement": "المصدران يقرّان بأن ضعفًا في Optimizely سمح للهاكرز بإدراج شيفرة مالوير في صفحات ويب لعدد كبير من المواقع (حوالي 178) بما فيها BBC وCNN وZoom.",
+      "differences": "لا توجد فروق جوهرية؛ يختلفان فقط في ذكر بعض المواقع المحددة التي تضررت.",
       "severity": "عالية",
-      "what_happened": "قامت مجموعة ShinyHunters باختراق أنظمة حساسة وسرقة بيانات، ثم قامت بتهديد شركة تابعة لبوينغ بالكشف عن المعلومات ما لم تُدفع الفدية؛ تم إلقاء القبض على أحد مؤسسي الشركة الكندية وأخرى من الأردن.",
-      "how_it_happened": "اعتمدت المجموعة على اختراق شبكة داخلية (مثل اختراق البريد الإلكتروني أو الخدمات الضعيفة)، ثم قامت بجمع وتشفير البيانات المسروقة. بعد ذلك استخدمت منصات وساطة الفدية لتنسيق عملية الابتزاز وإقناع الضحايا بالدفع. الفئة التقنية: اختراق الشبكة، استخراج البيانات، ثم الابتزاز عبر تهديد النشر.",
-      "how_handled": "قامت مكتب التحقيقات الفدرالي (FBI) بالتحقيق واعتقلت المتهمين بالتعاون مع جهات دولية، وأُصدرت تنبيهات للضحايا المتأثرين، مع اتخاذ إجراءات لتقوية أمان الأنظمة الداخلية."
+      "what_happened": "تم استغلال ثغرة في منصة اختبار A/B الخاصة بـ Optimizely لتضمين شيفرة جافاسكريبت خبيثة تُنشر إلى زوار المواقع المتأثرة.",
+      "how_it_happened": "ضعف في سياسات تحميل محتوى الطرف الثالث سمح للمهاجمين بتحميل وحدات اختبار معدلة تحمل شيفرة خبيثة، ما أدى إلى توزيع برامج سرقة بيانات على الزوار. التقنية هي استغلال سلسلة التوريد عبر مكوّن طرف ثالث.",
+      "how_handled": "أبلغت Optimizely بالثغرة، وتم إصدار تحديث لإصلاحها، وطُلب من المواقع المتضررة إزالة الشيفرة الخبيثة وتطبيق التحديثات فورًا."
+    },
+    {
+      "headline": "مجموعة APT الروسية Cold Relic تستغل اختراق سحابي لتسلسل اختراقات على منظمات أخرى",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/russian-cold-relic-hackers-use-stolen.html"
+        },
+        {
+          "name": "darkreading",
+          "link": "https://www.darkreading.com/cyberattacks-data-breaches/cold-relic-turns-one-cloud-breach-into-another"
+        }
+      ],
+      "agreement": "المصدران يوضحان أن مجموعة Cold Relic استغلت اختراقًا سحابيًا (بيانات Google Workspace) لتحويله إلى نقطة انطلاق لسلسلة اختراقات على منظمات أمريكية أخرى.",
+      "differences": "لا توجد فروق جوهرية؛ يضيف أحدهما تفاصيل حول أسلوب الهندسة الاجتماعية المستخدم.",
+      "severity": "عالية",
+      "what_happened": "قامت مجموعة Cold Relic بسرقة بيانات من حساب سحابي، ثم استخدمتها لتوجيه هجمات على منظمات أخرى عبر رسائل احتيالية وإعادة استغلال الاعتمادات المتسربة.",
+      "how_it_happened": "بعد اختراق حساب سحابي، جمعت المجموعة رموز OAuth وبيانات اعتماد أخرى، ثم أرسلت رسائل احتيالية تستغل الثقة المتبادلة بين الخدمات السحابية، ما مكنها من اختراق بيئات سحابية إضافية. التقنية هي استغلال الثقة السحابية وسلسلة الاختراق (chain attack).",
+      "how_handled": "قامت Mandiant وGoogle Threat Intelligence Group بإبلاغ المتضررين، وإجبارهم على إعادة تعيين الاعتمادات ومراجعة سياسات مشاركة البيانات."
+    },
+    {
+      "headline": "ثغرة في دعم HTTP/2 لخادم NGINX تسمح بتنفيذ كود عن بُعد دون مصادقة",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/10-year-old-nginx-http2-flaw-lets.html"
+        }
+      ],
+      "agreement": "المصدر يوضح أن الثغرة (CVE-2026-123007) موجودة منذ 2015 وتتيح للمهاجمين تنفيذ شيفرة على خوادم NGINX مفعّلة بها HTTP/2 دون الحاجة لتسجيل الدخول.",
+      "differences": "لا يوجد",
+      "severity": "عالية",
+      "what_happened": "تم اكتشاف ثغرة في معالجة إطارات HTTP/2 في خادم NGINX تسمح بتنفيذ كود عن بُعد دون أي مصادقة.",
+      "how_it_happened": "خطأ في منطق معالجة إطارات HTTP/2 يخلق حالة غير متوقعة في الذاكرة، ما يتيح للمهاجم إرسال طلبات مُصمَّمة لتجاوز الحدود وتنفيذ شيفرة خبيثة على الخادم. التقنية هي Remote Code Execution عبر عيب في بروتوكول HTTP/2.",
+      "how_handled": "أصدرت شركة F5 (NGINX) تحديثات تصحيحية في الإصدارات 1.31.9 و1.30.7، وتم نشر تنبيهات لتحديث الخوادم المتأثرة فورًا."
     }
   ],
   "terms": [
     {
-      "term": "Supply chain attack",
-      "explanation": "هجوم سلسلة التوريد هو اختراق يتم عبر مكوّن أو خدمة طرف ثالث تُستخدم من قبل منظمة أخرى. يتيح للمهاجم إدخال شيفرة خبيثة في المنتج أو الخدمة قبل وصولها إلى العميل النهائي، كما حدث مع منصة Optimizely."
+      "term": "Remote Code Execution (RCE)",
+      "explanation": "تنفيذ شيفرة عن بُعد هو قدرة المهاجم على تشغيل أوامر على نظام الضحية دون الحاجة إلى الدخول الفعلي إلى الحساب. تُستغل عادةً ثغرات في البرامج تسمح بتمرير مدخلات غير مُعالجة إلى وظائف تنفيذية."
     },
     {
-      "term": "Remote code execution (RCE)",
-      "explanation": "تنفيذ التعليمات عن بُعد هو ثغرة تسمح للمهاجم بتشغيل شيفرة على نظام الضحية دون الحاجة لتسجيل الدخول. تُستغل عادةً عبر مدخلات غير مُصادقة، مثل طلبات الشبكة أو ملفات مُحمَّلة، كما في ثغرات Java وN‑central."
+      "term": "Supply Chain Attack",
+      "explanation": "هجوم سلسلة التوريد يركز على اختراق أحد مكوّنات أو أدوات التطوير الموثوقة (مثل حزمة برمجية) ثم نشر شيفرة خبيثة عبرها إلى آلاف المستخدمين. يتيح هذا النوع من الهجمات انتشارًا واسعًا بسرعة."
     },
     {
-      "term": "Multi‑agent offensive framework",
-      "explanation": "إطار عمل متعدد الوكلاء هو نظام يضم عدة كيانات ذكية (وكلاء) تتعاون لتخطيط وتنفيذ هجمات. كل وكيل يمكنه أداء مهمة محددة مثل جمع المعلومات، توليد الاستغلال، أو تنفيذ الهجوم، وهو ما استخدمته مجموعات تستخدم ARTEX أو CAIRN."
+      "term": "Credential Stealer",
+      "explanation": "برنامج سرقة بيانات الاعتماد هو برنامج خبيث يجمع مفاتيح الوصول مثل رموز API، كلمات المرور أو مفاتيح SSH ويُرسلها إلى خادم يتحكم فيه المهاجم. تُستغل هذه البيانات لاختراق أنظمة إضافية."
     },
     {
-      "term": "API misuse",
-      "explanation": "سوء استخدام واجهة برمجة التطبيقات يحدث عندما تُتيح الواجهة عمليات حساسة بدون تحقق كافٍ من هوية المستدعي. في حالة N‑central، سمحت بعض واجهات API غير المحصّنة بتنفيذ أوامر على الخوادم، مما مَكّن المهاجمين من نشر برمجيات التعدين."
+      "term": "Unauthenticated Deserialization",
+      "explanation": "التسلسل غير الموثق هو ضعف يحدث عندما يقوم التطبيق بفك تسلسل بيانات مدخلة من المصدر دون التحقق من صحتها، ما يتيح للمهاجم إدخال كائنات ضارة تُنفّذ شيفرة عند فك تسلسلها."
     },
     {
-      "term": "Data extortion",
-      "explanation": "الابتزاز بالبيانات هو أسلوب يسرق فيه المهاجمون معلومات حساسة ثم يهددون بنشرها أو بيعها إذا لم تُدفع الفدية. استُخدم هذا النموذج من قبل مجموعة ShinyHunters ضد بيانات FBI وشركة تابعة لبوينغ."
+      "term": "Memory Corruption",
+      "explanation": "تلف الذاكرة يحدث عندما يتم كتابة بيانات إلى موقع ذاكرة غير مخصص لها، مثل الكتابة خارج الحد (out‑of‑bounds). هذا يمكن المهاجم من تعديل تدفق التنفيذ وتشغيل شيفرة ضارة."
     }
   ]
 }
