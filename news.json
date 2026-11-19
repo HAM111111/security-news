@@ -1,138 +1,142 @@
 {
-  "updated_at": "2026-11-18T23:39:13.949136+00:00",
+  "updated_at": "2026-11-19T23:32:52.096361+00:00",
   "stories": [
     {
-      "headline": "ثغرة Java4Shell تسمح بتنفيذ كود عن بُعد على تطبيقات Java الشائعة",
+      "headline": "ثغرة تصعيد صلاحيات في VMware vCenter تسمح بتجاوز المصادقة",
       "sources": [
         {
           "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/java4shell-cve-2026-114938-enables-pre.html"
-        },
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/cisa-urges-immediate-patching-of.html"
-        },
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/oracle-to-patch-11-java-flaws-today-as.html"
-        },
-        {
-          "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/"
+          "link": "https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html"
         },
         {
           "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/java4shell-vulnerability-puts-many-enterprise-applications-at-risk-of-takeover/"
-        },
-        {
-          "name": "darkreading",
-          "link": "https://www.darkreading.com/vulnerabilities-threats/java4shell-flaw-threatens-global-java-application-ecosystem"
+          "link": "https://www.securityweek.com/newly-patched-vmware-vcenter-flaw-exploited-as-zero-day-by-chinese-apt/"
         }
       ],
-      "agreement": "جميع المصادر تؤكد وجود ثغرة حرجة في OpenJDK (Java 17.0.6 وما فوق) تسمح بتنفيذ كود عن بُعد دون مصادقة وتؤثر على تطبيقات مثل Jira وJenkins وKeycloak.",
-      "differences": "بعض المصادر تشير إلى أن الاستغلال يتطلب معالج يدعم AVX‑512 VBMI، بينما أخرى تذكر فقط خطر الكتابة خارج الحدود (out‑of‑bounds write) وتختلف في درجة CVSS (8.1 أو 8.1).",
+      "agreement": "كلا المصدرين يقران بوجود ثغرة حرجة (CVSS 9.8) في VMware vCenter تسمح للمهاجمين على الشبكة بتجاوز عملية المصادقة والحصول على وصول غير مصرح به، وأن الشركة أصدرت تصحيحاً لجميع الفروع المدعومة.",
+      "differences": "موقع SecurityWeek يضيف أن الثغرة استُغلت كـ Zero‑Day من قبل مجموعة صينية، بينما The Hacker News لا يذكر الجهة المستغلة ولا يصف الثغرة بأنها Zero‑Day.",
       "severity": "عالية",
-      "what_happened": "اكتُشفت ثغرة Java4Shell تسمح للمهاجمين بتنفيذ شيفرة ضارة عن بُعد على خوادم تشغيل Java دون الحاجة لتسجيل الدخول.",
-      "how_it_happened": "الضعف هو كتابة خارج الحدود في مكوّن OpenJDK؛ يُستغل عبر طلبات مدخلة تُعيد كتابة الذاكرة، مما يتيح تحميل شيفرة خبيثة. الاستغلال يتطلب معالج يدعم مجموعة تعليمات AVX‑512 VBMI.",
-      "how_handled": "أصدرت Oracle وOpenJDK تصحيحات عاجلة، ونشرت CISA تحذيراً لتطبيق التحديثات فوراً."
+      "what_happened": "تم اكتشاف ثغرة في منطق المصادقة داخل vCenter تمكّن المهاجمين من إرسال طلبات مُصمَّمة بحيث تتخطى فحص المصادقة، ما يمنحهم صلاحيات إدارية على النظام.",
+      "how_it_happened": "الثغرة تكمن في عدم التحقق الصحيح من هوية الجلسة عند معالجة طلبات API، مما يسمح بتنفيذ هجوم تجاوز المصادقة (Authentication Bypass). تم استغلالها عبر شبكة داخلية أو عبر إنترنت إذا كان الوصول ممكناً.",
+      "how_handled": "أصدرت Broadcom تصحيحات لجميع الإصدارات المدعومة من vCenter، ونُصِح العملاء بتطبيقها فوراً. لا يتوفر حل مؤقت (Workaround) وتم تحذير المستخدمين من عدم ترك الواجهة مكشوفة على الإنترنت."
     },
     {
-      "headline": "اختراق حزمة Agent Framework على PyPI وسرقة بيانات الاعتماد السحابية",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html"
-        },
-        {
-          "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/"
-        },
-        {
-          "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/microsoft-agent-framework-releases-poisoned-with-credential-stealer/"
-        }
-      ],
-      "agreement": "جميع المصادر تفيد بأن نسخًا مخربةً من حزمة agent‑framework تم نشرها على PyPI (الإصدارات 1.26.1 و1.26.2) وتقوم بسرقة مفاتيح Azure، GitHub Actions وغيرها عند تشغيل Python.",
-      "differences": "بعض المصادر تذكر أن النسختين نُشرتا بفارق 33 دقيقة فقط، بينما أخرى تركز على إجراءات الاستجابة فقط.",
-      "severity": "عالية",
-      "what_happened": "تم استغلال صلاحية النشر على مستودع PyPI لإدخال شيفرة خبيثة داخل حزمة Agent Framework الرسمية، مما أدى إلى سرقة بيانات اعتماد سحابية عند تشغيلها.",
-      "how_it_happened": "استُغل ثقة سلسلة إمداد البرمجيات؛ قام المهاجمون برفع إصدارات معدّلة من الحزمة تحتوي على منطق سرقة بيانات (credential stealer) يُنفّذ عند استدعاء أي سكربت Python. التقنية هي تلوث حزمة (package poisoning) في بيئة Python.",
-      "how_handled": "تم سحب الإصدارات المتضررة من PyPI، وإصدار إرشادات لتحديث الحزم وإجراء فحص للأنظمة المتأثرة."
-    },
-    {
-      "headline": "ثغرة في منصة Optimizely تُسخّر لتوزيع برمجيات خبيثة على مواقع كبرى",
-      "sources": [
-        {
-          "name": "Krebs on Security",
-          "link": "https://krebsonsecurity.com/2026/11/attackers-used-optimizely-to-a-b-test-malware-on-top-websites/"
-        },
-        {
-          "name": "darkreading",
-          "link": "https://www.darkreading.com/cyber-risk/optimizely-malware-attacks-third-party-vendor-risks"
-        }
-      ],
-      "agreement": "المصدران يقرّان بأن ضعفًا في Optimizely سمح للهاكرز بإدراج شيفرة مالوير في صفحات ويب لعدد كبير من المواقع (حوالي 178) بما فيها BBC وCNN وZoom.",
-      "differences": "لا توجد فروق جوهرية؛ يختلفان فقط في ذكر بعض المواقع المحددة التي تضررت.",
-      "severity": "عالية",
-      "what_happened": "تم استغلال ثغرة في منصة اختبار A/B الخاصة بـ Optimizely لتضمين شيفرة جافاسكريبت خبيثة تُنشر إلى زوار المواقع المتأثرة.",
-      "how_it_happened": "ضعف في سياسات تحميل محتوى الطرف الثالث سمح للمهاجمين بتحميل وحدات اختبار معدلة تحمل شيفرة خبيثة، ما أدى إلى توزيع برامج سرقة بيانات على الزوار. التقنية هي استغلال سلسلة التوريد عبر مكوّن طرف ثالث.",
-      "how_handled": "أبلغت Optimizely بالثغرة، وتم إصدار تحديث لإصلاحها، وطُلب من المواقع المتضررة إزالة الشيفرة الخبيثة وتطبيق التحديثات فورًا."
-    },
-    {
-      "headline": "مجموعة APT الروسية Cold Relic تستغل اختراق سحابي لتسلسل اختراقات على منظمات أخرى",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/russian-cold-relic-hackers-use-stolen.html"
-        },
-        {
-          "name": "darkreading",
-          "link": "https://www.darkreading.com/cyberattacks-data-breaches/cold-relic-turns-one-cloud-breach-into-another"
-        }
-      ],
-      "agreement": "المصدران يوضحان أن مجموعة Cold Relic استغلت اختراقًا سحابيًا (بيانات Google Workspace) لتحويله إلى نقطة انطلاق لسلسلة اختراقات على منظمات أمريكية أخرى.",
-      "differences": "لا توجد فروق جوهرية؛ يضيف أحدهما تفاصيل حول أسلوب الهندسة الاجتماعية المستخدم.",
-      "severity": "عالية",
-      "what_happened": "قامت مجموعة Cold Relic بسرقة بيانات من حساب سحابي، ثم استخدمتها لتوجيه هجمات على منظمات أخرى عبر رسائل احتيالية وإعادة استغلال الاعتمادات المتسربة.",
-      "how_it_happened": "بعد اختراق حساب سحابي، جمعت المجموعة رموز OAuth وبيانات اعتماد أخرى، ثم أرسلت رسائل احتيالية تستغل الثقة المتبادلة بين الخدمات السحابية، ما مكنها من اختراق بيئات سحابية إضافية. التقنية هي استغلال الثقة السحابية وسلسلة الاختراق (chain attack).",
-      "how_handled": "قامت Mandiant وGoogle Threat Intelligence Group بإبلاغ المتضررين، وإجبارهم على إعادة تعيين الاعتمادات ومراجعة سياسات مشاركة البيانات."
-    },
-    {
-      "headline": "ثغرة في دعم HTTP/2 لخادم NGINX تسمح بتنفيذ كود عن بُعد دون مصادقة",
+      "headline": "ثغرة HTTP/2 في خادم NGINX تمكن المهاجمين غير الموثوقين من تنفيذ شيفرة عن بُعد",
       "sources": [
         {
           "name": "The Hacker News",
           "link": "https://thehackernews.com/2026/11/10-year-old-nginx-http2-flaw-lets.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "link": "https://www.bleepingcomputer.com/news/security/critical-nginx-nginx2root-bugs-let-attackers-hijack-servers/"
+        },
+        {
+          "name": "SecurityWeek",
+          "link": "https://www.securityweek.com/f5-patches-critical-nginx2root-flaws-as-poc-exploits-go-public/"
         }
       ],
-      "agreement": "المصدر يوضح أن الثغرة (CVE-2026-123007) موجودة منذ 2015 وتتيح للمهاجمين تنفيذ شيفرة على خوادم NGINX مفعّلة بها HTTP/2 دون الحاجة لتسجيل الدخول.",
-      "differences": "لا يوجد",
+      "agreement": "جميع المصادر تشير إلى وجود ثغرة قديمة في دعم HTTP/2 في NGINX (المعروفة باسم nginx2root) تسمح بتنفيذ شيفرة عن بُعد بدون مصادقة، وقد تم إصدار إصدارات مصححة (1.31.9 و1.30.7).",
+      "differences": "The Hacker News يحدد الإصدارات المصححة فقط، بينما BleepingComputer يوضح إمكانية ربط الثغرة بخلل في نواة لينكس للوصول إلى صلاحيات root، وموقع SecurityWeek يذكر أن PoC عام وتم نشره للجمهور.",
       "severity": "عالية",
-      "what_happened": "تم اكتشاف ثغرة في معالجة إطارات HTTP/2 في خادم NGINX تسمح بتنفيذ كود عن بُعد دون أي مصادقة.",
-      "how_it_happened": "خطأ في منطق معالجة إطارات HTTP/2 يخلق حالة غير متوقعة في الذاكرة، ما يتيح للمهاجم إرسال طلبات مُصمَّمة لتجاوز الحدود وتنفيذ شيفرة خبيثة على الخادم. التقنية هي Remote Code Execution عبر عيب في بروتوكول HTTP/2.",
-      "how_handled": "أصدرت شركة F5 (NGINX) تحديثات تصحيحية في الإصدارات 1.31.9 و1.30.7، وتم نشر تنبيهات لتحديث الخوادم المتأثرة فورًا."
+      "what_happened": "تمكن المهاجمون من إرسال إطارات HTTP/2 مُصمَّمة خصيصاً تؤدي إلى فساد الذاكرة داخل خادم NGINX، ما يسمح لهم بتنفيذ أوامر نظامية على الخادم.",
+      "how_it_happened": "الضعف يكمن في معالجة إطارات HTTP/2 غير المتوقعة مما يسبب كتابة خارج حدود الذاكرة (Out‑of‑Bounds Write). التقنية المستخدمة هي استغلال فساد الذاكرة (Memory Corruption) للوصول إلى تنفيذ شيفرة عن بُعد (RCE) دون الحاجة لتسجيل الدخول.",
+      "how_handled": "أصدرت شركة F5 (المسؤولة عن NGINX) إصدارات مصححة للبرنامج، وتم توجيه المشغلين إلى تحديث خوادمهم فوراً أو تعطيل دعم HTTP/2 كإجراء مؤقت."
+    },
+    {
+      "headline": "ثغرات حرجة في لغة PHP تسمح بتنفيذ شيفرة عن بُعد عبر عدة آليات",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/phpaftershell-explained-how-hackers.html"
+        },
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/php-fixes-7-critical-flaws-including.html"
+        },
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/php-warns-of-critical-security-flaws.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "link": "https://www.bleepingcomputer.com/news/security/php-security-updates-fix-18-flaws-including-critical-rce-bugs/"
+        },
+        {
+          "name": "Krebs on Security",
+          "link": "https://krebsonsecurity.com/2026/10/widespread-php-flaw-may-cause-many-site-outages-today/"
+        },
+        {
+          "name": "SecurityWeek",
+          "link": "https://www.securityweek.com/php-patches-seven-critical-rce-vulnerabilities/"
+        },
+        {
+          "name": "darkreading",
+          "link": "https://www.darkreading.com/application-security/critical-php-flaws-code-execution-panic-php2shell"
+        }
+      ],
+      "agreement": "جميع المصادر تؤكد وجود مجموعة من الثغرات الخطيرة في إصدارات PHP المدعومة، بعضها يتيح تنفيذ شيفرة عن بُعد دون مصادقة، وقد أصدرت مؤسسة PHP تصحيحات شاملة لجميع الإصدارات.",
+      "differences": "مقال The Hacker News رقم 1 يركز على ثغرة phpAfterShell (CVE‑2026‑126714) في تخزين جلسات الملفات، بينما مقال 2 يذكر سبع ثغرات حرجة أخرى (مثل CVE‑2026‑115560). مقالات أخرى تختلف في عدد الثغرات المذكورة وتوقيت الإصدار (قريباً vs تم الإصدار).",
+      "severity": "عالية",
+      "what_happened": "اكتشفت عدة عيوب في نواة PHP تشمل تخزين الجلسات، محرك التعبيرات المنتظمة، ومعالجة السلاسل، ما يسمح للمهاجمين بإدخال كائنات أو بيانات غير صالحة تؤدي إلى تنفيذ شيفرة خبيثة على الخادم.",
+      "how_it_happened": "الضعف يتنوع بين حقن كائنات عبر تخزين الجلسات (Object Injection)، فساد الذاكرة في محرك regex/strings، وثغرات في تسلسل/تحليل البيانات. جميعها تصنف تحت تنفيذ شيفرة عن بُعد (Remote Code Execution) وتستغل إعدادات غير آمنة أو عدم تحديث الإصدارات.",
+      "how_handled": "أصدرت مؤسسة PHP تحديثات أمنية تغطي جميع الثغرات المذكورة، وتم جدولة إصدار شامل في 19 نوفمبر 2026. دُعيت جميع المشغلين لتحديث إصدارات PHP فوراً وتطبيق أفضل ممارسات تكوين الجلسات."
+    },
+    {
+      "headline": "ثغرة تسلسل غير آمن في Apache Roller تتيح تنفيذ شيفرة عن بُعد",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html"
+        },
+        {
+          "name": "SecurityWeek",
+          "link": "https://www.securityweek.com/critical-apache-roller-axis-vulnerabilities-exploited-in-attacks/"
+        }
+      ],
+      "agreement": "المصدران يقران بوجود ثغرة تسلسل غير آمن (Deserialization) في نقطة النهاية XML‑RPC لبرنامج Apache Roller (CVE‑2026‑129448) ذات تصنيف CVSS 9.8، وأن الهجوم يُنفّذ بدون الحاجة لمصادقة وقد تم استغلاله في البرية.",
+      "differences": "موقع SecurityWeek يذكر أيضًا وجود ثغرات في Apache Axis ضمن نفس التقرير، بينما The Hacker News يركز فقط على Roller ويشير إلى وجود استغلال نشط في الوقت الحالي.",
+      "severity": "عالية",
+      "what_happened": "تمكن المهاجمون من إرسال بيانات XML‑RPC مُصمَّمة تؤدي إلى تسلسل كائنات غير موثوقة داخل الخادم، ما يتيح لهم تنفيذ شيفرة خبيثة والحصول على تحكم كامل في النظام.",
+      "how_it_happened": "الثغرة تنبع من عدم التحقق من سلامة البيانات المُستقبلة في واجهة XML‑RPC، ما يسمح بالقيام بهجوم تسلسل غير آمن (Insecure Deserialization). التقنية المستخدمة هي إدخال كائنات ضارة تؤدي إلى تنفيذ شيفرة عن بُعد (RCE).",
+      "how_handled": "قامت مؤسسة Apache بإصدار تحديث أمان وتوصية بتحديث نسخة Roller إلى الإصدار المصحح أو تعطيل واجهة XML‑RPC مؤقتاً حتى يتم تطبيق التصحيح."
+    },
+    {
+      "headline": "اختراق بيانات مجموعة SBC الطبية وتسريب معلومات 1.6 مليون عميل",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "link": "https://www.bleepingcomputer.com/news/security/hackers-steal-data-of-16-million-sbc-medical-group-customers/"
+        }
+      ],
+      "agreement": "المصدر يوضح أن مجموعة SBC Medical تعرضت لهجوم إلكتروني أسفر عن سرقة بيانات حساسة لعدد يقدر بـ1.6 مليون من العملاء والموظفين، وأن الشركة أبلغت هيئة الأوراق المالية الأمريكية (SEC).",
+      "differences": "لا توجد مصادر أخرى لهذا الحدث لتظهر أي اختلاف.",
+      "severity": "متوسطة",
+      "what_happened": "تمكن القراصنة من الوصول غير المصرح به إلى أنظمة SBC Medical وسحب معلومات شخصية تشمل أسماء، عناوين، وأرقام هوية من قاعدة البيانات.",
+      "how_it_happened": "على الأرجح استُخدمت تقنية سرقة أوراق الاعتماد أو هجوم تصيد إلكتروني للوصول إلى الشبكة الداخلية، ثم تم استخراج البيانات عبر أدوات استخراج بيانات (Data Exfiltration).",
+      "how_handled": "قامت SBC Medical بإصدار بيان رسمي للجهات التنظيمية وإبلاغ المتضررين، وشهدت بدء تحقيق داخلي وخارجي لتحديد نطاق الاختراق وتطبيق إجراءات تعزيزية للأمن مثل تعزيز التحكم في الوصول ومراقبة الأنشطة."
     }
   ],
   "terms": [
     {
+      "term": "Authentication Bypass",
+      "explanation": "تجاوز المصادقة هو أسلوب يُستغل عندما يجد المهاجم ثغرة في آلية التحقق من هوية المستخدم، مما يسمح له بالدخول إلى النظام دون إدخال بيانات اعتماد صالحة. عادةً ما تكون الثغرة نتيجة للتحقق غير الكافي أو الأخطاء في منطق الجلسة."
+    },
+    {
       "term": "Remote Code Execution (RCE)",
-      "explanation": "تنفيذ شيفرة عن بُعد هو قدرة المهاجم على تشغيل أوامر على نظام الضحية دون الحاجة إلى الدخول الفعلي إلى الحساب. تُستغل عادةً ثغرات في البرامج تسمح بتمرير مدخلات غير مُعالجة إلى وظائف تنفيذية."
+      "explanation": "تنفيذ الشيفرة عن بُعد هو قدرة المهاجم على تشغيل أوامر برمجية على الخادم المستهدف دون الحاجة للوصول المادي أو إلى حساب مستخدم. يحدث ذلك عبر استغلال ثغرات في التطبيق أو النظام تسمح بتمرير شيفرة خبيثة إلى البيئة التنفيذية."
     },
     {
-      "term": "Supply Chain Attack",
-      "explanation": "هجوم سلسلة التوريد يركز على اختراق أحد مكوّنات أو أدوات التطوير الموثوقة (مثل حزمة برمجية) ثم نشر شيفرة خبيثة عبرها إلى آلاف المستخدمين. يتيح هذا النوع من الهجمات انتشارًا واسعًا بسرعة."
+      "term": "Zero‑Day",
+      "explanation": "ثغرة الصفر‑يوم هي ضعف أمان يُكتشف ويُستغل قبل أن تُصدر الشركة المصنّعة تصحيحاً أو تنشر تحذيراً رسميًا. كونها غير معروفة للمنتج يجعلها ذات خطر مرتفع، حيث لا توجد دفاعات جاهزة ضدها."
     },
     {
-      "term": "Credential Stealer",
-      "explanation": "برنامج سرقة بيانات الاعتماد هو برنامج خبيث يجمع مفاتيح الوصول مثل رموز API، كلمات المرور أو مفاتيح SSH ويُرسلها إلى خادم يتحكم فيه المهاجم. تُستغل هذه البيانات لاختراق أنظمة إضافية."
+      "term": "Deserialization",
+      "explanation": "التسلسل غير الآمن هو عملية تحويل كائنات برمجية إلى صيغة يمكن نقلها أو تخزينها ثم إعادتها إلى شكلها الأصلي. إذا لم يتحقق التطبيق من صحة البيانات المستقبلة، يمكن للمهاجم إدخال كائنات مُصمَّمة لتنفيذ شيفرة خبيثة عند إعادة تسلسلها."
     },
     {
-      "term": "Unauthenticated Deserialization",
-      "explanation": "التسلسل غير الموثق هو ضعف يحدث عندما يقوم التطبيق بفك تسلسل بيانات مدخلة من المصدر دون التحقق من صحتها، ما يتيح للمهاجم إدخال كائنات ضارة تُنفّذ شيفرة عند فك تسلسلها."
-    },
-    {
-      "term": "Memory Corruption",
-      "explanation": "تلف الذاكرة يحدث عندما يتم كتابة بيانات إلى موقع ذاكرة غير مخصص لها، مثل الكتابة خارج الحد (out‑of‑bounds). هذا يمكن المهاجم من تعديل تدفق التنفيذ وتشغيل شيفرة ضارة."
+      "term": "Deepfake",
+      "explanation": "الديب فيك هو تقنية توليد محتوى وسائط (فيديو أو صوت) واقعي باستخدام الذكاء الاصطناعي لتقليد شخص حقيقي. تُستَخدم في عمليات الاحتيال لتضليل الجمهور أو التلاعب بالثقة، كما حدث في حملة احتيال على منصة العملات الرقمية."
     }
   ]
 }
