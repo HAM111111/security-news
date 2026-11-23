@@ -1,126 +1,122 @@
 {
-  "updated_at": "2026-11-22T23:31:31.947400+00:00",
+  "updated_at": "2026-11-23T23:39:20.094901+00:00",
   "stories": [
     {
-      "headline": "وكلاء الذكاء الاصطناعي الصينيون يستغلون ثغرة صفرية في برنامج MONAI Label للوصول بصلاحيات الجذر",
+      "headline": "استغلال ثغرة في خدمة GoodCloud السحابية لشركة GL.iNet لتثبيت برمجيات خبيثة على أجهزة الرواتر وKVM",
       "sources": [
         {
           "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/attackers-ai-agents-found-zero-day-in.html"
-        },
-        {
-          "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/amazon-china-linked-hackers-ai-agents-exploited-medical-software-zero-day/"
+          "link": "https://thehackernews.com/2026/11/hackers-exploited-glinet-cloud-flaw-to.html"
         },
         {
           "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/hackers-use-autonomous-ai-tool-cairn-to-find-zero-day-take-over-server/"
-        }
-      ],
-      "agreement": "جميع المصادر أفادوا أن مجموعة صينية استخدمت وكلاء ذكاء اصطناعي مستقلين لاكتشاف ثغرة صفرية غير معلنة في خادم MONAI Label، مما مكنهم من كتابة ملفات خارج مجلد التخزين والحصول على صلاحيات الجذر على خادم جامعة.",
-      "differences": "لا يوجد",
-      "severity": "عالية",
-      "what_happened": "استغل المهاجمون ثغرة صفرية في برنامج MONAI Label للحصول على وصول كامل إلى خادم جامعي.",
-      "how_it_happened": "استخدموا أدوات ذكاء اصطناعي تلقائية لتحديد نقطة ضعف تسمح بالكتابة خارج المسار المسموح (Path Traversal)، ثم استغلوا هذه القدرة لرفع الامتيازات إلى الجذر عبر استغلال عدم وجود تحقق من هوية المستخدم.",
-      "how_handled": "أصدر المطورون تحديثًا لإصلاح الثغرة في النسخة 0.8.5 وما فوق، ونصحت الجامعات والمؤسسات الصحية بتطبيق التصحيحات فورًا وتدعيم سياسات التحكم بالوصول."
-    },
-    {
-      "headline": "مجموعة \"Armory Castle\" الصينية تستغل ثغرة صفرية في VMware vCenter للحصول على صلاحيات المدير وسرقة البيانات",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html"
-        },
-        {
-          "name": "darkreading",
-          "link": "https://www.darkreading.com/cyberattacks-data-breaches/china-armory-castle-vmware-vcenter-zero-day"
-        }
-      ],
-      "agreement": "المصادر تشير إلى أن مجموعة صينية تُعرف بـ Armory Castle (UNC5221) استغلت ثغرة صفرية في خدمة دليل VMware (CVE‑2026‑123890) تسمح بتجاوز المصادقة، ما مكنهم من الوصول كمدير وسرقة بيانات.",
-      "differences": "لا يوجد",
-      "severity": "عالية",
-      "what_happened": "تم استغلال ثغرة صفرية في خادم VMware vCenter للحصول على وصول غير مصرح به كمسؤول.",
-      "how_it_happened": "ثغرة تجاوز المصادقة في خدمة دليل VMware تسمح للمهاجم بإرسال طلبات مُصَمَّمَة لتسجيل الدخول دون أي بيانات اعتماد، مما يمنحه صلاحيات إدارية كاملة على الخادم.",
-      "how_handled": "أصدرت VMware تحديثًا طارئًا لإصلاح الثغرة وطُلب من جميع العملاء تطبيق الإصلاح فورًا، بالإضافة إلى توصية بتفعيل المصادقة المتعددة العوامل ومراجعة سجلات الوصول."
-    },
-    {
-      "headline": "استغلال ثغرة حرجة في Cisco Expressway لاختراق شبكة داخلية في مؤسسة روسية",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html"
-        },
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-vmware-cisco.html"
-        }
-      ],
-      "agreement": "جميع المصادر أكّدوا أن ثغرة حرجة (CVE‑2026‑76466) في Cisco Expressway تسمح بمهاجم غير مصدق بالوصول عن بُعد إلى الجهاز، وقد تم استغلالها لاختراق مؤسسة روسية بعد نشر دليل استغلال عام.",
-      "differences": "لا يوجد",
-      "severity": "عالية",
-      "what_happened": "استغل المهاجمون ثغرة في Cisco Expressway لاختراق أربعة أجهزة والوصول إلى الشبكة الداخلية.",
-      "how_it_happened": "ثغرة تسلسلية (Deserialization) غير موثوقة تسمح للملف المرسل بأن يُنفّذ كودًا خبيثًا على الجهاز، ما يتيح للمهاجم تنفيذ أوامر عن بُعد دون أي تحقق من الهوية.",
-      "how_handled": "أصدرت Cisco تصحيحًا أمنيًا عاجلًا للثغرة، وطُلب من العملاء تطبيق التحديث وتفعيل قوائم التحكم في الوصول (ACL) لتقليل سطح الهجوم."
-    },
-    {
-      "headline": "واتساب تصحّح ثلاث ثغرات أمنية بما فيها خلل في نظام Android يُستغل في عمليات الاحتيال",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/whatsapp-patches-3-security-flaws.html"
+          "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/"
         },
         {
           "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/whatsapp-fixes-flaw-uncovered-while-disrupting-scam-campaign/"
+          "link": "https://www.securityweek.com/gl-inet-routers-kvms-compromised-via-remote-management-service-flaw/"
         }
       ],
-      "agreement": "المصادر تشير إلى أن واتساب أصدر تصحيحات لثلاث ثغرات، أحدها في تطبيق Android (CVE‑2026‑23871) يخص عدم التحقق الكامل من عناوين URL في الإعلانات الردية، ويُشتبه بأنه استُخدم في حملات احتيال.",
-      "differences": "لا يوجد",
-      "severity": "متوسطة",
-      "what_happened": "تم اكتشاف وإصلاح ثغرة في تطبيق واتساب لأندرويد تسمح بتنفيذ هجمات تصيد عبر روابط إعلانات مزيفة.",
-      "how_it_happened": "ثغرة في التحقق من صحة URL المرفقة بالردود الإعلانية تسمح للمهاجم بتمرير رابط خبيث يؤدي إلى تنفيذ عمليات احتيال على المستخدمين.",
-      "how_handled": "أصدرت واتساب تحديثًا للأندرويد (الإصدار 2.26.17.4) لإصلاح الثغرة، ونصحت المستخدمين بتحديث التطبيق فورًا وتفعيل إعدادات الأمان الموصى بها."
+      "agreement": "جميع المصادر تؤكد أن ثغرة في خدمة GoodCloud للإدارة السحابية تم استغلالها لتثبيت برمجيات خبيثة وتوفير وصول خلفي (backdoor) إلى أجهزة الرواتر وKVM الخاصة بالمستخدمين.",
+      "differences": "موقع The Hacker News يذكر أن الشركة أصلحت الثغرة يوم الجمعة ومنعت الوصول، بينما BleepingComputer يضيف أن بعض الضحايا لاحظوا وجود أوامر عكسية (reverse shells). موقع SecurityWeek يوضح أن تنظيف الأجهزة يتطلب تحديث الفيرم وير.",
+      "severity": "عالية",
+      "what_happened": "تم اختراق خدمة الإدارة السحابية GoodCloud واستخدامها لنشر برمجيات خبيثة على الرواتر وأجهزة KVM، مما مكن المهاجمين من التحكم عن بُعد في هذه الأجهزة.",
+      "how_it_happened": "ثغرة في واجهة برمجة تطبيقات (API) الخاصة بخدمة GoodCloud سمحت بتنفيذ أوامر عن بُعد بدون مصادقة، فاستغلها المهاجمون لإرسال حمولة خبيثة إلى الأجهزة المستهدفة، وهو ما يُصنّف كتنفيذ شفرة عن بُعد (Remote Code Execution).",
+      "how_handled": "قامت GL.iNet بإصدار تصحيح للثغرة، وأغلقت القناة التي استُخدمت في الهجوم، وأصدرت تحديثات للفيرم وير لتطهير الأجهزة، ودعت العملاء إلى تحديث أجهزتهم فوراً."
     },
     {
-      "headline": "Signal تفرض حظرًا للقطات الشاشة لمنع وكلاء الذكاء الاصطناعي من قراءة المحادثات",
+      "headline": "استغلال ثغرة في خدمة Azure API Management Classic لسرقة مفاتيح API من شركات الطاقة النرويجية",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "link": "https://www.bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials/"
+        },
+        {
+          "name": "SecurityWeek",
+          "link": "https://www.securityweek.com/azure-flaw-exploited-to-target-secrets-at-norwegian-energy-firms/"
+        }
+      ],
+      "agreement": "المصدران يحددان أن ثغرة في طبقة Classic من خدمة Azure API Management استُغلت لسرقة بيانات الاعتماد المخزنة (API credentials) وتم ربط الهجوم بشركات طاقة نرويجية.",
+      "differences": "BleepingComputer يذكر أن مايكروسوفت أصدرت تحذيراً للعملاء، بينما SecurityWeek يركز على استهداف شركات الطاقة النرويجية بالتحديد.",
+      "severity": "عالية",
+      "what_happened": "استطاع المهاجمون الوصول إلى مفاتيح API المخزنة داخل خدمة Azure API Management وسرقتها لاستخدامها في هجمات لاحقة.",
+      "how_it_happened": "ثغرة في التحكم في الوصول داخل خدمة API Management سمحت بالقراءة غير المصرح بها للبيانات السرية؛ استغل المهاجمون ذلك للحصول على مفاتيح الاعتماد عبر هجمة كشف معلومات (Information Disclosure) تؤدي إلى تسريب أسرار النظام.",
+      "how_handled": "طرحت مايكروسوفت تصحيحاً للثغرة، وطلبت من العملاء تحديث الخدمات وتغيير المفاتيح المتسرّبة، كما نشرت توجيهات حول مراجعة الأذونات وتدوير الأسرار."
+    },
+    {
+      "headline": "ثغرة حرجة في برنامج ConnectWise ScreenConnect تُستغل لاختراق حواسيب فنيي MSP",
       "sources": [
         {
           "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/signal-blocks-ai-agents-from-reading.html"
+          "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-screenconnect.html"
+        }
+      ],
+      "agreement": "المصدر يوضح أن ثغرة CVE-2026-84869 في عميل ScreenConnect تسمح للضيوف بنقل وتنفيذ حمولة خبيثة على جهاز الفني المتصل.",
+      "differences": "لا توجد اختلافات بين المصادر لأن القصة مأخوذة من مصدر واحد فقط.",
+      "severity": "عالية",
+      "what_happened": "استغل المهاجمون ثغرة في عميل ScreenConnect لإرسال حمولة خبيثة إلى حواسيب الفنيين التابعة لمزودي الخدمات المدارة (MSP) مما سمح بالتحكم عن بُعد.",
+      "how_it_happened": "الثغرة تمكّن المهاجم من تنفيذ شيفرة عن بُعد (RCE) عبر جلسة اتصال غير مصادقة، حيث يُسمح للضيف بتحميل ملفات وتنفيذها على جهاز المتصل، ما يُصنّف كثغرة تنفيذ شفرة عن بُعد.",
+      "how_handled": "تم إصدار تصحيح للثغرة من قبل ConnectWise، ونُصح العملاء بتطبيق التحديث فوراً، بالإضافة إلى مراجعة سياسات الوصول وتفعيل الحماية المتعددة العوامل على جلسات الدعم."
+    },
+    {
+      "headline": "سرقة محادثات وتعليمات (prompts) من مزودي خدمات الذكاء الاصطناعي عبر منصة OpenRouter",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/openrouter-drops-3-providers-after.html"
         },
         {
           "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/signal-to-block-siri-gemini-ai-from-capturing-chats-on-ios-android/"
+          "link": "https://www.bleepingcomputer.com/news/security/openrouter-drops-ai-providers-over-leaked-prompts-and-secrets/"
+        },
+        {
+          "name": "SecurityWeek",
+          "link": "https://www.securityweek.com/ai-inference-providers-failed-to-detect-hacking-and-prompt-theft-says-dragos/"
         }
       ],
-      "agreement": "المصادر تؤكد أن تطبيق Signal سيعطّل تلقائيًا ميزة التقاط الشاشة على أنظمة iOS 27 وأندرويد لمنع الوكلاء الذكائيين من قراءة محتوى المحادثات الخاصة.",
-      "differences": "لا يوجد",
+      "agreement": "جميع المصادر تؤكد أن OpenRouter قامت بحذف ثلاثة مزودي خدمات الذكاء الاصطناعي بعد اكتشاف سرقة محادثات وبيانات حساسة استمرت لأشهر.",
+      "differences": "The Hacker News يضيف أن السرقة استهدفت إعداد “Zero Data Retention” المفترض عدم تخزين البيانات، بينما BleepingComputer يركز على انتهاك سياسات التعامل مع البيانات، وSecurityWeek يبرز فشل المزودين في اكتشاف الاختراق.",
       "severity": "متوسطة",
-      "what_happened": "أعلنت Signal عن ميزة جديدة تمنع التطبيقات الذكائية من التقاط صور شاشة للمحادثات.",
-      "how_it_happened": "تم دمج آلية كشف محاولة التقاط الشاشة داخل التطبيق، وعند اكتشاف طلب من وكيل AI يتم منع العملية وإرسال تنبيه للمستخدم.",
-      "how_handled": "تم نشر التحديث على المتجرين مع إبلاغ المستخدمين بميزة الحماية الجديدة، وأُشير إلى أن الحماية ليست مكتملة وقد تحتاج إلى تحسينات مستقبلية."
+      "what_happened": "تمكن القراصنة من الوصول إلى طلبات (prompts) ومحادثات المستخدمين داخل مزودي خدمات الذكاء الاصطناعي، واستخدامها أو تخزينها دون علم العملاء.",
+      "how_it_happened": "استغل المهاجمون ثغرات في آليات التوثيق أو إعدادات الاحتفاظ بالبيانات (مثل عدم تطبيق سياسات Zero Data Retention)، مما سمح لهم بالوصول إلى طلبات المعالجة وتخزينها—هجمة من نوع تسريب بيانات (Data Exfiltration) عبر واجهات API غير محمية بشكل كافٍ.",
+      "how_handled": "قامت OpenRouter بحذف المزودين المخالفين، وأعلنت عن تحسينات في مراقبة الوصول وتطبيق سياسات حفظ البيانات الصارمة، كما نُصحت الشركات المتعاملة مع خدمات الذكاء الاصطناعي بمراجعة إعدادات الخصوصية وتدريب الفرق على الكشف عن الأنشطة غير المعتادة."
+    },
+    {
+      "headline": "اختراق شركة الطاقة الكورية الجنوبية KEPCO وتعريض بيانات 1.5 مليون شخص للخطر",
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "link": "https://www.bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million/"
+        }
+      ],
+      "agreement": "المصدر يؤكد أن مجموعة تهديدات اخترقت الشبكة الداخلية لشركة KEPCO وتمكنت من الوصول إلى أنظمة تحتوي على بيانات العملاء والموظفين والمتعاقدين.",
+      "differences": "لا توجد اختلافات لأنها مأخوذة من مصدر واحد فقط.",
+      "severity": "عالية",
+      "what_happened": "تم اختراق نظام الشركة وسرقة بيانات شخصية لعدد يقدر بـ 1.5 مليون شخص بما في ذلك عملاء وموظفين ومقاولين.",
+      "how_it_happened": "من المحتمل أن الهجوم بدأ عبر رسائل تصيد (phishing) أو استغلال ثغرات في الأنظمة الداخلية، مما سمح للمهاجمين بالتحرك داخل الشبكة وجمع البيانات الحساسة—هجمة من نوع اختراق الشبكة الداخلية (Network Intrusion) مع تسريب بيانات (Data Breach).",
+      "how_handled": "قامت KEPCO بإعلان الاختراق، وتعاونت مع فرق الاستجابة للحوادث لتحديد نطاق الاختراق، وتعزيز ضوابط الوصول، وإبلاغ الجهات التنظيمية والمتأثرين، بالإضافة إلى اتخاذ خطوات لتقوية الأمن السيبراني الداخلي."
     }
   ],
   "terms": [
     {
-      "term": "Zero‑day",
-      "explanation": "ثغرة صفرية هي ضعف أمان غير معروف للمُنتِج ولا توجد له تصحيحات بعد. يستغلها المهاجمون قبل أن يتوفر أي تحديث أو إصلاح، مما يجعلها ذات مخاطر عالية."
-    },
-    {
-      "term": "Privilege escalation",
-      "explanation": "تصعيد الامتيازات هو عملية رفع مستوى صلاحيات المهاجم من حساب منخفض إلى حساب إداري أو جذر. يتم ذلك عادةً عبر استغلال ثغرات في النظام أو في البرمجيات التي تسمح بالوصول غير المصرح به."
-    },
-    {
-      "term": "Authentication bypass",
-      "explanation": "تجاوز المصادقة يعني أن المهاجم يستطيع الدخول إلى نظام أو خدمة دون تقديم بيانات اعتماد صحيحة، عادةً عبر ثغرة تسمح بتسجيل الدخول مباشرة أو إقفال خطوات التحقق."
-    },
-    {
       "term": "Remote Code Execution (RCE)",
-      "explanation": "تنفيذ الكود عن بُعد هو قدرة المهاجم على تشغيل أوامر برمجية على خادم مستهدف من خلال شبكة الإنترنت، غالبًا ما تكون النتيجة اختراق كامل للنظام."
+      "explanation": "تنفيذ شفرة عن بُعد هو نوع من الثغرات يسمح للمهاجم بتشغيل أوامر برمجية على نظام الضحية دون الحصول على صلاحيات مسبقة. يتم استغلاله عادةً عبر مدخلات غير مُعالجة أو واجهات برمجة تطبيقات غير محمية."
     },
     {
-      "term": "Sandbox escape",
-      "explanation": "الهروب من الحاوية (Sandbox) هو عندما يتجاوز المهاجم حدود البيئة المعزولة التي تُستخدم لتقليل الأضرار، فيتمكن من تنفيذ أوامر على النظام الأساسي خارج الحاوية."
+      "term": "Server-Side Request Forgery (SSRF)",
+      "explanation": "ثغرة طلب من جانب الخادم تمكن المهاجم من جعل الخادم يقوم بطلبات إلى موارد داخلية أو خارجية غير مقصودة. تُستغل عادةً لتجاوز جدران الحماية أو استخراج معلومات حساسة."
+    },
+    {
+      "term": "API Credential Leakage",
+      "explanation": "تسريب بيانات اعتماد واجهة برمجة التطبيقات (API) يحدث عندما يتمكن مهاجم غير مخوّل من الوصول إلى مفاتيح أو رموز الوصول المخزنة، ما يتيح له استدعاء الخدمات المستهدفة بصلاحيات مرتفعة."
+    },
+    {
+      "term": "Supply Chain Attack",
+      "explanation": "هجوم سلسلة التوريد هو استغلال ضعف في أحد مكونات أو مزودي الخدمات التي تعتمد عليها المنظمة، مثل مكتبة برمجية أو منصة سحابية، للوصول إلى الأنظمة المستهدفة بشكل غير مباشر."
+    },
+    {
+      "term": "Zero-Day Vulnerability",
+      "explanation": "ثغرة الصفر يوم هي ثغرة أمان لم تُكتشف أو لم تُصدر لها تصحيح بعد، وتُستغل من قبل المهاجمين قبل أن يكون للمؤسسة أي وسيلة دفاعية ضدها."
     }
   ]
 }
