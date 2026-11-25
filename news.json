@@ -1,134 +1,122 @@
 {
-  "updated_at": "2026-11-24T23:39:29.571864+00:00",
+  "updated_at": "2026-11-25T23:39:24.814551+00:00",
   "stories": [
     {
-      "headline": "ثغرة صفرية حرجة في VMware vCenter تسمح بتجاوز المصادقة",
+      "headline": "اختراق نظام FinCEN التابع لوزارة الخزانة الأمريكية",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/us-treasurys-fincen-takes-some-systems.html"
+        },
+        {
+          "name": "SecurityWeek",
+          "link": "https://www.securityweek.com/us-treasurys-fincen-disconnects-systems-following-cyber-incident/"
+        }
+      ],
+      "agreement": "اتفق المصدران على أن هناك وصولًا غير مصرح به إلى مجموعة محدودة من أنظمة FinCEN، وأن الوكالة أوقفت بعض الأنظمة كإجراء احترازي وأطلقت تحقيقًا.",
+      "differences": "أشار The Hacker News إلى وقوع الحادث فقط، بينما أضاف SecurityWeek تفاصيل حول تمديد المواعيد النهائية لتقديم التقارير للجهات المتضررة.",
+      "severity": "عالية",
+      "what_happened": "تمكن مجموعة غير معروفة من المتسللين من الدخول إلى نظام FinCEN وجمع بيانات حساسة.",
+      "how_it_happened": "استغل المهاجمون على الأرجح بيانات اعتماد مخترقة أو ثغرة غير مصححة في أحد مكونات النظام، مما مكنهم من تسجيل الدخول دون تفويض وإجراء عمليات داخلية.",
+      "how_handled": "قامت FinCEN بإغلاق الأنظمة المتأثرة مؤقتًا، ومددت المهل لتقديم التقارير، وتعمل على تحقيق شامل لتحديد نطاق الاختراق وتعزيز إجراءات الأمن."
+    },
+    {
+      "headline": "استغلال ثغرة RCE حرجة في نظام إدارة المحتوى دروبال",
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "link": "https://thehackernews.com/2026/11/drupal-fail2install-exploit-details.html"
+        },
+        {
+          "name": "BleepingComputer",
+          "link": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-drupal-rce-flaw-to-hijack-sites/"
+        },
+        {
+          "name": "SecurityWeek",
+          "link": "https://www.securityweek.com/drupal-flaw-found-by-anthropic-scanner-exploited-in-attacks/"
+        }
+      ],
+      "agreement": "جميع المصادر أكدت وجود ثغرة حرجة (CVE-2026-132165) تُسمى Fail2Install، تم استغلالها بنشاط لتشغيل شفرات عن بُعد، وتم إضافتها إلى كتالوج KEV لتلزم الوكالات الفدرالية بتطبيق التصحيحات قبل 27 نوفمبر 2026.",
+      "differences": "لا توجد اختلافات جوهرية؛ تختلف فقط تسميات الثغرة وتفاصيل الجدول الزمني المذكور في كل مصدر.",
+      "severity": "عالية",
+      "what_happened": "قامت مجموعات تهديد بنشر طلبات مُعَدَّة لاستغلال الثغرة في نواة دروبال، مما مكنهم من تنفيذ أكواد خبيثة على الخوادم غير المحدثة.",
+      "how_it_happened": "تسمح الثغرة للمهاجمين بإرسال طلب HTTP مُخصَّص يتضمن شيفرة خبيثة تُنفَّذ في سياق خادم دروبال، ما يحقق تنفيذًا عن بُعد دون الحاجة إلى مصادقة.",
+      "how_handled": "أصدرت CISA توجيهات إلزامية للجهات الفدرالية لتطبيق التحديثات بحلول 27 نوفمبر، ونشرت مشاريع دروبال تصحيحات فورية للمجتمع."
+    },
+    {
+      "headline": "ثغرة تجاوز المصادقة في VMware vCenter تُستغل كثيفة",
       "sources": [
         {
           "name": "The Hacker News",
           "link": "https://thehackernews.com/2026/11/vmware-vcenter-hit-by-another-critical.html"
         },
         {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/weekly-recap-vmware-0-day-java4shell.html"
-        },
-        {
           "name": "SecurityWeek",
           "link": "https://www.securityweek.com/vmware-updates-patch-critical-esx-vcenter-vulnerabilities/"
-        },
-        {
-          "name": "darkreading",
-          "link": "https://www.darkreading.com/cyberattacks-data-breaches/china-armory-castle-vmware-vcenter-zero-day"
         }
       ],
-      "agreement": "جميع المصادر تؤكد وجود ثغرة صفرية (CVE‑2026‑123903) في خدمة دليل VMware (vmdir) داخل vCenter تسمح للمهاجمين بتجاوز المصادقة، وقد استُغلّت في الهجمات الفعلية وتم تصنيفها 9.8 على مقياس CVSS وأُصدرت تصحيحات فورية.",
-      "differences": "مصدر SecurityWeek يضيف تفاصيل عن ثغرات إضافية في ESX، بينما مصدر darkreading يربطها بمجموعة صينية محتملة، لكن جوهر التقرير متطابق.",
+      "agreement": "اتفق المصدران على وجود ثغرة حاسمة (CVE-2026-123903) بدرجة CVSS 9.8 تسمح بتجاوز المصادقة في خدمة الدليل (vmdir) داخل vCenter، وتم استغلالها كثيفة قبل صدور التصحيح.",
+      "differences": "لا توجد فروق ملحوظة بين التقارير؛ يضيف SecurityWeek تفاصيل حول حزمة التصحيح الشاملة.",
       "severity": "عالية",
-      "what_happened": "تم استغلال ثغرة في مكوّن المصادقة داخل VMware vCenter للحصول على وصول غير مصرح به إلى أنظمة الإدارة، مما مكن المهاجمين من التحكم الكامل في الخوادم الافتراضية.",
-      "how_it_happened": "ثغرة تجاوز المصادقة (Authentication Bypass) في خدمة الدليل (vmdir) سمحت للمتسلل بإرسال طلبات مُصوَّبة إلى واجهة إدارة vCenter دون الحاجة إلى بيانات اعتماد صالحة، مستفيداً من ضعف في التحقق من هوية المستخدم.",
-      "how_handled": "أصدرت شركة Broadcom/VMware تصحيحات أمنية فورية لجميع الإصدارات المتأثرة، ودعت العملاء لتطبيق التحديثات فوراً وتفعيل الضوابط الإضافية مثل المصادقة متعددة العوامل."
+      "what_happened": "تمكن المهاجمون من الدخول إلى بيئات VMware وإدارة الخوادم عن بُعد عبر استغلال الثغرة.",
+      "how_it_happened": "تستغل الثغرة ضعفًا في معالجة طلبات LDAP في خدمة الدليل، حيث يمكن لمهاجم غير مصدق إرسال طلب مُعَدَّ يتيح له تخطي عملية المصادقة والحصول على صلاحيات إدارية.",
+      "how_handled": "قامت Broadcom/VMware بإصدار تصحيح فوري لجميع المنتجات المتأثرة، وحثت العملاء على تطبيقه فورًا لتجنب الاختراق."
     },
     {
-      "headline": "ثغرة في Azure API Management Classic تُستغل لسرقة مفاتيح API في شركات الطاقة النرويجية",
+      "headline": "حملة هجوم مدعومة بالذكاء الاصطناعي تستهدف خوادم إدارة Check Point",
       "sources": [
         {
           "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/microsoft-fixes-azure-api-management.html"
-        },
-        {
-          "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials/"
-        },
-        {
-          "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/azure-flaw-exploited-to-target-secrets-at-norwegian-energy-firms/"
+          "link": "https://thehackernews.com/2026/11/hackers-compromise-24-check-point.html"
         }
       ],
-      "agreement": "جميع المصادر تشير إلى وجود ثغرة في طبقة Classic من Azure API Management تسمح للجهة المهاجمة بالحصول على رموز الوصول (tokens) والسرّيات المخزنة داخل الخدمة، وقد استُهدفت شركات طاقة نرويجية مثل Equinor وSkagerak Energi.",
-      "differences": "مقال THN يذكر أن الفاعل غير معروف، بينما BleepingComputer يوضح دور هيئة الأمن الوطني النرويجية (NSM) في اكتشاف الحادث، وSecurityWeek يضيف تفاصيل حول استجابة مايكروسوفت وإغلاق الثغرة.",
+      "agreement": "المصدر يوضح أن مجموعة تهديد غير معروفة استخدمت أدوات هجومية مولدة بالذكاء الاصطناعي لاستهداف خوادم إدارة Check Point في 22 منظمة حول العالم.",
+      "differences": "لا توجد مصادر أخرى لهذا الحدث، لذا لا توجد فروق.",
       "severity": "عالية",
-      "what_happened": "تم استغلال ثغرة في مكوّن إدارة API في Azure للحصول على مفاتيح API السرية، ما مكن المهاجمين من الوصول إلى الخدمات الداخلية وسحب البيانات الحساسة.",
-      "how_it_happened": "ثغرة في آلية المصادقة داخل طبقة Classic تسمح للمتسلل بإرسال طلبات مخولة (authorized) إلى API Management باستخدام رموز مفقودة أو مُستغلة، مما يؤدي إلى استخراج مفاتيح API المخزنة.",
-      "how_handled": "قامت مايكروسوفت بنشر تصحيح سريع للثغرة، ونصحت العملاء بترقية إلى الطبقة الحديثة من Azure API Management وتطبيق مراقبة وصول المشبوهة."
+      "what_happened": "تم اختراق 24 خادم إدارة Check Point، ما أدى إلى سرقة بيانات وإمكانية التحكم في بيئات الحماية.",
+      "how_it_happened": "استخدم المهاجمون أدوات توليد شفرات تعتمد على نماذج ذكاء اصطناعي لتوليد حملات استغلال مخصصة، مستغلين واجهات الإدارة المكشوفة أو بيانات اعتماد ضعيفة للوصول إلى الخوادم.",
+      "how_handled": "قامت Check Point بالتعرف على النشاط عبر منصة GreyNoise، وأجرت استجابة حوادث تشمل عزل الخوادم المتأثرة وتحديث سياسات الوصول وتطبيق تصحيحات الأمان."
     },
     {
-      "headline": "ثغرة SSRF في N‑able MailAssure تُستغل للنفاذ إلى الشبكات الداخلية",
-      "sources": [
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/hackers-exploit-n-able-mailassure-flaw.html"
-        },
-        {
-          "name": "The Hacker News",
-          "link": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html"
-        }
-      ],
-      "agreement": "المصدران يقران بوجود ثغرة Server‑Side Request Forgery (CVE‑2026‑134624) في نظام N‑able MailAssure تسمح للمهاجمين الذين يملكون وصول API عالي المستوى بإجراء طلبات إلى أنظمة داخلية، وتم استغلالها بنشاط.",
-      "differences": "مقال THN يضيف أن الثغرة تم تصنيفها ضمن قائمة KEV إلى جانب ثغرة في MONAI Label، بينما تقرير THN يركز فقط على MailAssure.",
-      "severity": "عالية",
-      "what_happened": "استغل المهاجمون ثغرة SSRF في MailAssure للحصول على وصول غير مصرح به إلى خوادم داخلية، ما مكنهم من سرقة بيانات وإجراء أنشطة تخريبية داخل شبكات العملاء.",
-      "how_it_happened": "من خلال إرسال طلبات HTTP موجهة من خادم MailAssure إلى عناوين داخلية (مثل 127.0.0.1 أو موارد داخلية)، استغل المهاجم ضعف في التحقق من عناوين الوجهة داخل التطبيق لتجاوز حدود الشبكة.",
-      "how_handled": "قامت شركة N‑able بإصدار تصحيح للثغرة وتوجيه العملاء لتحديث إصدارات MailAssure، بالإضافة إلى توصية بتقليل صلاحيات API وتطبيق قوائم السماح (whitelisting) للطلبات الصادرة."
-    },
-    {
-      "headline": "اختراق خوادم إدارة Check Point في حملة مدعومة بالذكاء الاصطناعي",
+      "headline": "اختراق نظام تحليل معلومات مفتوح المصدر في وكالة الاستخبارات المركزية الأمريكية (CIA)",
       "sources": [
         {
           "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/hackers-compromise-check-point-servers-in-22-organizations/"
+          "link": "https://www.bleepingcomputer.com/news/security/hackers-reportedly-breached-cia-intelligence-analysis-system/"
         },
         {
           "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/check-point-security-management-servers-hacked-in-ai-assisted-campaign/"
+          "link": "https://www.securityweek.com/an-unclassified-cia-system-was-breached-in-a-cyberattack-ap-source-says/"
         }
       ],
-      "agreement": "المصدران يؤكدان أن مجموعة من المتسللين استهدفت 22 منظمة عبر اختراق خوادم إدارة Check Point Security باستخدام عدة ثغرات، مع استغلال أدوات مدعومة بالذكاء الاصطناعي لتسريع الهجوم.",
-      "differences": "SecurityWeek يذكر أن الهجوم جاء من 99 عنوان IP، بينما BleepingComputer لا يذكر عدد IPs لكنه يركز على عدد المنظمات المتأثرة.",
+      "agreement": "أفاد المصدران أن نظامًا غير مصنفًا لتحليل المعلومات داخل CIA تم اختراقه من قبل مجهولين، مع عدم وضوح مدى الضرر أو هوية المتسللين.",
+      "differences": "لا يوجد اختلاف جوهري؛ يضيف أحد المصدرين أن تفاصيل الاختراق ما زالت قيد التحقيق.",
       "severity": "عالية",
-      "what_happened": "تم اختراق خوادم إدارة Check Point، ما سمح للمتسللين بالتحكم في إعدادات الأمان الخاصة بالمنظمات المستهدفة وسحب معلومات حساسة.",
-      "how_it_happened": "استُغلت مجموعة من الثغرات في مكوّنات إدارة Check Point (مثل Remote Code Execution وPrivilege Escalation) مع توجيه أوامر عبر أدوات AI لتوليد استغلالات تلقائية وسريعة.",
-      "how_handled": "أصدرت Check Point تحديثات أمنية لإصلاح الثغرات المتضمنة، ونصحت المتأثرين بتطبيق التصحيحات فوراً، ومراجعة سجلات الدخول وتفعيل المصادقة المتعددة العوامل."
-    },
-    {
-      "headline": "اختراق شركة الطاقة الكورية الجنوبية KEPCO وتسريب بيانات 1.5 مليون مستخدم",
-      "sources": [
-        {
-          "name": "BleepingComputer",
-          "link": "https://www.bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million/"
-        },
-        {
-          "name": "SecurityWeek",
-          "link": "https://www.securityweek.com/1-5-million-impacted-by-data-breach-at-south-korean-electric-company-kepco/"
-        }
-      ],
-      "agreement": "كلا المصدرين يعلنان أن مجموعة مهددة اخترقت شبكة KEPCO الداخلية وسرقت بيانات تشمل معلومات العملاء والموظفين والمتعاقدين، مع تقدير عدد المتضررين بحوالي 1.5 مليون.",
-      "differences": "لا توجد فروق جوهرية بين التقريرين؛ يضيف SecurityWeek بعض التفاصيل التقنية حول طرق الاختراق.",
-      "severity": "عالية",
-      "what_happened": "تم اختراق الأنظمة الداخلية لشركة KEPCO، ما أدى إلى سرقة معلومات شخصية لعدد كبير من العملاء والموظفين، مما يعرضهم لخطر الاحتيال والابتزاز.",
-      "how_it_happened": "استغل المتسللون ثغرة في أحد التطبيقات الداخلية أو الاعتماد على بيانات اعتماد مسروقة للوصول إلى البوابة الخلفية، ثم نقلوا بيانات قاعدة البيانات إلى خوادم خارجية.",
-      "how_handled": "أعلنت KEPCO عن بدء تحقيق داخلي مع جهات إنفاذ القانون، واتخذت إجراءات لتقوية الحماية، مثل تحديث البرمجيات وتطبيق مصادقة متعددة العوامل، وإشعار المتضررين."
+      "what_happened": "تمكن مجموعة أو فرد غير معروف من الدخول إلى نظام تحليل معلومات سري داخل CIA، ما قد يسمح بتسريب بيانات استخبارية.",
+      "how_it_happened": "من المحتمل أن يكون الاختراق نتيجة استغلال ثغرة في مكوّن برمجي مفتوح المصدر أو سرقة بيانات اعتماد إدارية، مما مكن المهاجم من الدخول إلى النظام دون اكتشاف.",
+      "how_handled": "بدأت الوكالة تحقيقًا داخليًا لتحديد نطاق الخرق وتعزيز الضوابط الأمنية، مع اتخاذ إجراءات عزل للأنظمة المتأثرة وتحديث آليات المراقبة."
     }
   ],
   "terms": [
     {
-      "term": "Zero-Day",
-      "explanation": "ثغرة صفرية هي ضعف في البرمجية لا يعرفه المُصنع ولا يتم تصحيحه بعد، ويُستغل مباشرة من قبل المهاجمين قبل إصدار أي تصحيح. عادةً ما تُصنَّف على أنها عالية الخطورة لأنها لا تتوفر لها حلول مؤقتة."
-    },
-    {
-      "term": "Server-Side Request Forgery (SSRF)",
-      "explanation": "ثغرة تسمح للمهاجم بإجبار الخادم المستهدف على إجراء طلبات إلى موارد داخلية أو خارجية لا يُقصد الوصول إليها. تُستغل عادةً عندما لا يتحقق التطبيق من صحة عناوين URL المدخلة."
+      "term": "Remote Code Execution (RCE)",
+      "explanation": "تنفيذ التعليمات البرمجية عن بُعد هو نوع من الثغرات يسمح للمهاجم بإرسال شيفرة خبيثة إلى خادم أو تطبيق وتشغيلها دون الحاجة إلى صلاحيات مسبقة. يستخدم عادةً استغلالًا لخطأ في معالجة المدخلات أو في بروتوكولات الاتصال."
     },
     {
       "term": "Authentication Bypass",
-      "explanation": "تجاوز آلية المصادقة يعني أن المهاجم يستطيع الدخول إلى النظام دون توفير بيانات اعتماد صالحة، إما عبر استغلال ضعف في تصميم العملية أو عبر ثغرات برمجية تسمح بتجاوز الفحص."
+      "explanation": "تجاوز المصادقة هو ضعف يتيح للمهاجم تخطي عملية التحقق من الهوية والوصول إلى وظائف أو بيانات محمية. يحدث عندما يكون هناك خطأ في منطق التحقق أو في معالجة طلبات الدخول."
     },
     {
-      "term": "Command-and-Control (C2)",
-      "explanation": "قناة التحكم والقيادة تُستخدم من قبل البرمجيات الخبيثة لتلقي أوامر من الخادم المُتحكم، وغالباً ما تُستغل بروتوكولات مخفيّة أو شبكات موزّعة مثل IPFS لإخفاء التواصل."
+      "term": "Zero-Day Exploit",
+      "explanation": "استغلال اليوم الصفري هو هجوم يُستغل فيه ثغرة لم تُكتشف أو لم تُصدر لها تصحيحات بعد. نظراً لعدم وجود تدابير دفاعية، يكون هذا النوع من الهجمات شديد الخطورة."
     },
     {
-      "term": "Vishing",
-      "explanation": "هجوم صيد صوتي يُستهدف فيه الضحية عبر مكالمات هاتفية زائفة لتجميع بيانات اعتماد أو معلومات حساسة. يُستخدم عادةً كوسيلة أولية للوصول إلى أنظمة الشركات."
+      "term": "AI-driven Offensive Tooling",
+      "explanation": "أدوات هجومية مدعومة بالذكاء الاصطناعي تستخدم نماذج تعلم آلي لتوليد شيفرات هجوم أو تحسين استراتيجيات الاختراق تلقائيًا. تسهم في تسريع إنشاء استغلالات مخصصة وتوسيع نطاق الهجمات."
+    },
+    {
+      "term": "KEV (Known Exploited Vulnerabilities) Catalog",
+      "explanation": "كتالوج الثغرات المستغلة المعروف هو قاعدة بيانات تديرها CISA تسجل الثغرات التي تم تأكيد استغلالها في البرمجيات. تُستخدم لتوجيه الجهات الحكومية والخاصة إلى تطبيق تصحيحات سريعة لتقليل المخاطر."
     }
   ]
 }
